@@ -1,0 +1,39 @@
+<div class="card-group mt-2">
+
+  {% for post in site.posts %}
+    {% include blog/post-card.html %}
+  {% endfor %}
+  
+</div>
+
+<script>
+  function rgb2hex(red, green, blue) {
+    var rgb = blue | (green << 8) | (red << 16);
+    return '#' + (0x1000000 + rgb).toString(16).slice(1)
+  }
+
+  window.addEventListener("load", function(event) {
+    var card = document.getElementsByClassName('card');
+    for (let index = 0; index < card.length; index++) {
+      
+      var img = card[index].children[0];
+      var canvas = document.createElement('canvas');
+      canvas.width = img.width;
+      canvas.height = img.height;
+      canvas.getContext('2d').drawImage(img, 0, 0, img.width, img.height);
+      
+      var pixelData = canvas.getContext('2d').getImageData(20, 20, 1, 1).data;
+      //console.log(pixelData);
+      var red = pixelData[0];
+      var green = pixelData[1];
+      var blue = pixelData[2];
+      var alpha = pixelData[3];
+      var color = rgb2hex(red,green,blue);
+      card[index].style.border = "2px solid "+color;
+      //console.log("color: "+color);
+    }
+
+    });
+  
+  
+  </script>

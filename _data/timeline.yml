@@ -1,0 +1,101 @@
+- title: INELCOM SPAIN 
+  from: Septiembre 2020
+  to: ACTUALIDAD
+  description: "<h4>I+D+I FIRMWARE AND SOFTWARE DEVELOPMENT</h4> \
+                <ul>\
+                <li>Planificación, desarrollo y gestión técnica para proyectos de telecomunicaciones.</li>\
+                <li>Diseño, desarrollo y ejecución de pruebas de un nuevo equipo electrónicos para sistemas de telecomunicaciones.</li>\
+                <li>Análisis e interpretación de datos.</li>\
+                <li>Soporté técnico a cliente.</li>\
+                <li>Investigación y desarrollo de nuevos equipos electrónicos para proyectos de telecomunicaciones.</li>\
+                <li>Diseño y desarrollo de sistemas de medición automatizados para análisis de señales y control de instalaciones y equipos de telecomunicaciones.</li>\
+                <li>Detección de problemas y mal funcionamiento en equipos electrónicos.</li>\
+                <li>Manejo de equipamiento de laboratorio.</li>\
+                <li>Lectura e interpretación de documentación técnica.</li>\
+                <li>Hoja de especificación electrónica, circuitos electrónicos, instrumentaciones electrónicas, definición hardware, etc.</li> \
+                <li>Redacción de documentación técnica como manual de usuario, pruebas de validación y reportes de verificación.</li>\
+                <li>Programación de microcontroladores de 8 bits (NXP) (PIC18F) y 32 bits (STM32).</li>\
+                <li>Programación de procesadores Linux embebidos, principalmente raspbian.</li>\
+                <li>Desarrollo e Implementación de protocolos de comunicación industrial como Modbus (TCP / IP y RTU) y SNMP, haciendo uso de RS232, RS485 y Ethernet.</li>\
+                <li>Desarrollo e Implementación de protocolos de comunicación con microcontroladores y procesadores como el I2C, SPI, UART, USB, WiFi, Bluetooth, NFC.</li>\
+                <li>Manejo de versiones con GitLab.</li>\
+                </ul>
+                <div>
+                <spam class='badge badge-pill text-primary border border-primary ml-1'>#Investigacion</spam>
+                <spam class='badge badge-pill text-primary border border-primary ml-1'>#C</spam>
+                <spam class='badge badge-pill text-primary border border-primary ml-1'>#PYTHON</spam>
+                <spam class='badge badge-pill text-primary border border-primary ml-1'>#IoT</spam>
+                <spam class='badge badge-pill text-primary border border-primary ml-1'>#GitLab</spam>
+                <spam class='badge badge-pill text-primary border border-primary ml-1'>#Microcontroladores</spam>
+                <spam class='badge badge-pill text-primary border border-primary ml-1'>#Microprocesadores</spam>
+                <spam class='badge badge-pill text-primary border border-primary ml-1'>#STM32</spam>
+                <spam class='badge badge-pill text-primary border border-primary ml-1'>#AnalisisDeDatos</spam>
+                <spam class='badge badge-pill text-primary border border-primary ml-1'>#Industry4.0</spam>
+                </div>
+                "
+
+- title: CELLNEX TELECOM SPAIN 
+  from: Junio 2020
+  to: Agosto 2020
+  description: "<h4><spam>[PRACTICAS]</spam>INNOVATION PRODUCT</h4> \
+  <ul>\
+    <li>Investigación de nuevos productos o tecnologías en el mercado.</li>\
+    <li>Redacción de artículos sobre las tecnologías emergentes y sus casos de uso.</li>\
+    <li>Seguimiento a corto y largo plazo de proyectos de innovación tecnológica.</li>\
+  </ul>
+  <div>
+    <spam class='badge badge-pill text-primary border border-primary ml-1'>#Innovacion</spam>
+  </div>
+  "
+
+
+- title: INDRA SPAIN
+  from: ABRIL 2019 
+  to: ENERO 2020
+  description: "
+  <h4><spam>[PRACTICAS]</spam> DESARROLLO DE FIRMWARE PARA EL DEPARTAMENTO DE IFF</h4>\
+  <ul>\
+    <li>Diseño, desarrollo y pruebas de integración para equipos de Defensa Aérea, vigilancia y control del espacio aéreo.</li>\
+    <li>Lectura de documentación técnica sobre protocolos de comunicaciones.</li>\
+    <li>Conocimientos en control de versiones de proyecto tortoise svn.</li>\
+    <li>Detección de errores en el funcionamiento de PCBs.</li>\
+    <li>Lectura de esquemáticos de PCB.</li>\
+    <li>Modelado de circuitos electrónicos con VHDL en las diferentes versiones del Quartus (6.1, 10, 13 y 18).</li>\ 
+    <li>Realización de pruebas simuladas en bancos de prueba.</li>\
+    <li>Manejo de equipamiento de laboratorio: osciloscopio, polímetro, analizador de espectro y power meter rf.</li>\ 
+    <li>Conocimiento en sistemas de radar y comunicaciones aeronáuticas para civiles y militares.</li>\
+  </ul>\
+  <div>\
+    <spam class='badge badge-pill text-primary border border-primary ml-1'>#VHDL</spam>\
+    <spam class='badge badge-pill text-primary border border-primary ml-1'>#MILITAR</spam>\
+    <spam class='badge badge-pill text-primary border border-primary ml-1'>#RADAR</spam>\
+    <spam class='badge badge-pill text-primary border border-primary ml-1'>#IFF</spam>\
+    <spam class='badge badge-pill text-primary border border-primary ml-1'>#Quartus</spam>\
+    <spam class='badge badge-pill text-primary border border-primary ml-1'>#Osciloscopio</spam>\
+  </div>
+  "
+
+
+- title: EVERIS SPAIN
+  from: SEPTIEMBRE 2018
+  to: ABRIL 2019
+  description: "
+  <h4><spam>[PRACTICAS]</spam> DESARROLLO DE NUEVAS TECNOLOGÍAS CON INTELIGENCIA ARTIFICIAL.</h4>
+  <ul>\
+    <li>Presentación de avances tecnológicos en el mercado.</li>\
+    <li>Investigación y elaboración de pruebas de concepto con modelos de inteligencia artificial. </li>\
+    <li>Programación con C, Python, HTML5/CC3/JavaScript, Vue.js, NodeJs. </li>\
+    <li>Conocimiento en TensorFlow, Firebase.</li>\
+    <li>Análisis e interpretación de datos.</li>\
+    <li>Almacenamiento de métricas y datos en base de datos no relacional (MongoDB).</li>\ 
+    <li>Pruebas de integración entre sistemas de adquisición de datos y representación de datos.</li>\
+    <li>Selección del Hardware óptimo para el proyecto.</li>\
+  </ul>\
+  <div>\
+    <spam class='badge badge-pill text-primary border border-primary ml-1'>#TensorFlow</spam>\
+    <spam class='badge badge-pill text-primary border border-primary ml-1'>#Firebase</spam>\
+    <spam class='badge badge-pill text-primary border border-primary ml-1'>#IA</spam>\
+    <spam class='badge badge-pill text-primary border border-primary ml-1'>#MongoDB</spam>\
+  </div>
+  "
+  

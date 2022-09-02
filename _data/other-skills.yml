@@ -1,0 +1,11 @@
+- name: Creatividad
+  percentage: 90
+  color: info
+
+- name: Habilidades comunicativas
+  percentage: 80
+  color: primary 
+
+- name: Responsabilidad
+  percentage: 100
+  color: secondary

@@ -1,0 +1,11 @@
+- name: C/C++
+  percentage: 90
+  color: danger
+
+- name: Python
+  percentage: 70
+  color: secondary
+
+- name: Javascript (Backend and Frontend) 
+  percentage: 70
+  color: info

@@ -1,0 +1,35 @@
+[
+  
+    {
+      "title"    : "¿Que es la resistencia electica?",
+      "category" : "",
+      "tags"     : "basico, Ley-de-Ohm",
+      "url"      : "/blog/resistencia-electrica",
+      "date"     : "2016-08-30 00:00:00 +0200"
+    } ,
+  
+    {
+      "title"    : "¿Que es el voltaje?",
+      "category" : "",
+      "tags"     : "basico, Ley-de-Ohm",
+      "url"      : "/blog/que-es-el-voltaje",
+      "date"     : "2016-08-30 00:00:00 +0200"
+    } ,
+  
+    {
+      "title"    : "¿Que es el jostyck?",
+      "category" : "",
+      "tags"     : "basico, joystick, sensores",
+      "url"      : "/blog/que-es-el-joystick",
+      "date"     : "2016-08-30 00:00:00 +0200"
+    } ,
+  
+    {
+      "title"    : "¿Que es la corriente electrica?",
+      "category" : "",
+      "tags"     : "basico, Ley-de-Ohm",
+      "url"      : "/blog/corriente-electrica",
+      "date"     : "2016-08-30 00:00:00 +0200"
+    } 
+  
+]
