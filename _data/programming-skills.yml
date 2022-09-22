@@ -1,11 +1,11 @@
-- name: C/C++
+- name: Microcontroladores
   percentage: 90
   color: danger
 
-- name: Python
-  percentage: 70
-  color: secondary
+- name: LINUX Embebido
+  percentage: 75
+  color: danger
 
-- name: Javascript (Backend and Frontend) 
+- name: Desarrollo Web 
   percentage: 70
   color: info

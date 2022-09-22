@@ -1,28 +1,30 @@
 - title: INELCOM SPAIN 
   from: Septiembre 2020
   to: ACTUALIDAD
-  description: "<h4>I+D+I FIRMWARE AND SOFTWARE DEVELOPMENT</h4> \
+  description: "<h4>Programador de sistemas embebidos</h4> \
                 <ul>\
-                <li>Planificación, desarrollo y gestión técnica para proyectos de telecomunicaciones.</li>\
-                <li>Diseño, desarrollo y ejecución de pruebas de un nuevo equipo electrónicos para sistemas de telecomunicaciones.</li>\
+                <li>Planificación, implementación y gestión técnica para proyectos de telecomunicaciones.</li>\
+                <li>Diseño, desarrollo y ejecución de pruebas de nuevos equipos electrónicos para sistemas de telecomunicaciones.</li>\
                 <li>Análisis e interpretación de datos.</li>\
-                <li>Soporté técnico a cliente.</li>\
-                <li>Investigación y desarrollo de nuevos equipos electrónicos para proyectos de telecomunicaciones.</li>\
-                <li>Diseño y desarrollo de sistemas de medición automatizados para análisis de señales y control de instalaciones y equipos de telecomunicaciones.</li>\
-                <li>Detección de problemas y mal funcionamiento en equipos electrónicos.</li>\
-                <li>Manejo de equipamiento de laboratorio.</li>\
+                <li>Investigación de nuevas tecnologías para proyectos de telecomunicaciones.</li>\
+                <li>Análisis de señales de control para instalaciones y equipos de telecomunicaciones.</li>\
                 <li>Lectura e interpretación de documentación técnica.</li>\
-                <li>Hoja de especificación electrónica, circuitos electrónicos, instrumentaciones electrónicas, definición hardware, etc.</li> \
-                <li>Redacción de documentación técnica como manual de usuario, pruebas de validación y reportes de verificación.</li>\
                 <li>Programación de microcontroladores de 8 bits (NXP) (PIC18F) y 32 bits (STM32).</li>\
                 <li>Programación de procesadores Linux embebidos, principalmente raspbian.</li>\
                 <li>Desarrollo e Implementación de protocolos de comunicación industrial como Modbus (TCP / IP y RTU) y SNMP, haciendo uso de RS232, RS485 y Ethernet.</li>\
                 <li>Desarrollo e Implementación de protocolos de comunicación con microcontroladores y procesadores como el I2C, SPI, UART, USB, WiFi, Bluetooth, NFC.</li>\
+                <li>Leer más</li>\
+                <li>Detección de problemas y mal funcionamiento en equipos electrónicos.</li>\
+                <li>Manejo de equipamiento de laboratorio.</li>\
+                <li>Hoja de especificación electrónica, circuitos electrónicos, instrumentaciones electrónicas, definición hardware, etc.</li> \
+                <li>Soporté técnico a cliente.</li>\
+                <li>Redacción de documentación técnica como manual de usuario, pruebas de validación y reportes de verificación.</li>\
                 <li>Manejo de versiones con GitLab.</li>\
                 </ul>
                 <div>
                 <spam class='badge badge-pill text-primary border border-primary ml-1'>#Investigacion</spam>
                 <spam class='badge badge-pill text-primary border border-primary ml-1'>#C</spam>
+                <spam class='badge badge-pill text-primary border border-primary ml-1'>#FreeRTOS</spam>
                 <spam class='badge badge-pill text-primary border border-primary ml-1'>#PYTHON</spam>
                 <spam class='badge badge-pill text-primary border border-primary ml-1'>#IoT</spam>
                 <spam class='badge badge-pill text-primary border border-primary ml-1'>#GitLab</spam>
