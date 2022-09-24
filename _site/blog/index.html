@@ -31,7 +31,8 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css">
 
   <!-- Bootstrap CSS CDN -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+  <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
   <!-- Animate CSS CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
@@ -43,8 +44,7 @@
 
 <body class="h-100 d-flex flex-column">
 
-  <main class="flex-shrink-0 container mt-1">
-    <nav class="navbar navbar-expand-lg navbar-themed">
+  <nav class="navbar navbar-expand-lg navbar-themed">
 
   <a class="navbar-brand" href="/"><h5><b>Oqueber Navarro</b></h5></a>
 
@@ -68,7 +68,8 @@
   </div>
 
 </nav>
-    <a href="javascript:window.history.back();">< Back</a>
+  <a href="javascript:window.history.back();">< Back</a>
+  <main class="mt-auto flex-shrink-0 container mt-1">
 
     <!-- Simple-Jekyll-Search https://github.com/christian-fei/Simple-Jekyll-Search -->
 
@@ -99,10 +100,31 @@
 
   
     <div class="col-lg-4 col-sm-6 my-3 wow animated fadeIn" data-wow-delay=".15s">
+  <a style="border-radius: 15px;text-decoration: none !important;  height: 100%;"  href="/blog/Almacenamiento-de-agua" class="card">
+    <img style="border-radius: 15px 15px 0 0;margin-top: -2px;" src="../img/posts/2022-09-24-Almacenamiento-de-agua/Paso_19.jpg"" class="card-img-top" alt="...">
+    <div style="padding: 10px 15px 15px 15px;" class="card-body text-themed">
+      <h5 class="card-title">Almacenamiento de agua para huertos urbanos</h5>
+      
+      
+      <div class="card-text">
+        
+          <span class="tag badge badge-pill text-primary border border-primary">huerto</span>
+        
+      </div>
+      <!--
+      <p class="card-text"><style> .sombra_texto { background: rgba(0,0,0,0.2); border-radius: 10px; padding: 0px 5px; } </style> <div class="bd-example"> <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel"> <ol class="carousel-indicators"> <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li><small><i>  read more...</i></small></p>
+      --->
+    </div>
+  </a>
+</div>
+
+
+  
+    <div class="col-lg-4 col-sm-6 my-3 wow animated fadeIn" data-wow-delay=".15s">
   <a style="border-radius: 15px;text-decoration: none !important;  height: 100%;"  href="/blog/resistencia-electrica" class="card">
     <img style="border-radius: 15px 15px 0 0;margin-top: -2px;" src="../img/posts/2016-08-30-resistencia-electrica/poster.jpg" class="card-img-top" alt="...">
     <div style="padding: 10px 15px 15px 15px;" class="card-body text-themed">
-      <h4 class="card-title">¿Que es la resistencia electica?</h4>
+      <h5 class="card-title">¿Que es la resistencia electica?</h5>
       
       
       <div class="card-text">
@@ -125,7 +147,7 @@
   <a style="border-radius: 15px;text-decoration: none !important;  height: 100%;"  href="/blog/que-es-el-voltaje" class="card">
     <img style="border-radius: 15px 15px 0 0;margin-top: -2px;" src="../img/posts/2016-08-30-que-es-el-voltaje/poster.jpg" class="card-img-top" alt="...">
     <div style="padding: 10px 15px 15px 15px;" class="card-body text-themed">
-      <h4 class="card-title">¿Que es el voltaje?</h4>
+      <h5 class="card-title">¿Que es el voltaje?</h5>
       
       
       <div class="card-text">
@@ -148,7 +170,7 @@
   <a style="border-radius: 15px;text-decoration: none !important;  height: 100%;"  href="/blog/que-es-el-joystick" class="card">
     <img style="border-radius: 15px 15px 0 0;margin-top: -2px;" src="../img/posts/2016-08-30-que-es-el-joystick/poster.jpg" class="card-img-top" alt="...">
     <div style="padding: 10px 15px 15px 15px;" class="card-body text-themed">
-      <h4 class="card-title">¿Que es el jostyck?</h4>
+      <h5 class="card-title">¿Que es el jostyck?</h5>
       
       
       <div class="card-text">
@@ -173,7 +195,7 @@
   <a style="border-radius: 15px;text-decoration: none !important;  height: 100%;"  href="/blog/corriente-electrica" class="card">
     <img style="border-radius: 15px 15px 0 0;margin-top: -2px;" src="../img/posts/2016-08-30-corriente-electrica/poster.jpg" class="card-img-top" alt="...">
     <div style="padding: 10px 15px 15px 15px;" class="card-body text-themed">
-      <h4 class="card-title">¿Que es la corriente electrica?</h4>
+      <h5 class="card-title">¿Que es la corriente electrica?</h5>
       
       
       <div class="card-text">
@@ -260,13 +282,20 @@
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
 <!-- jQuery CDN -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
 <!-- Popper.js CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 
-<!-- Bootstrap JS CDN -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!--  JS CDN -->
+<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+
+
+
+
 
 <!-- wow.js CDN & Activation -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>

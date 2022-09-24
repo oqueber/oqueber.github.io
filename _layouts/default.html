@@ -6,9 +6,9 @@
 
 <body class="h-100 d-flex flex-column">
 
-  <main class="flex-shrink-0 container mt-1">
-    {% include navbar.html %}
-    <a href="javascript:window.history.back();">< Back</a>
+  {% include navbar.html %}
+  <a href="javascript:window.history.back();">< Back</a>
+  <main class="mt-auto flex-shrink-0 container mt-1">
 
     {{ content }}
   </main>
