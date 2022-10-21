@@ -18,7 +18,9 @@ Actualmente me encuentro buscando nuevos retos, preferiblemente aquellos que bus
 
 <div class="row">
   {%- assign unfocused_color = "6c757d" -%}
+  
   <p>Redes: </p>
+  
   {% for account in site.author %}
 
     {%- assign service_name = account[0] -%}
@@ -29,7 +31,7 @@ Actualmente me encuentro buscando nuevos retos, preferiblemente aquellos que bus
        onMouseOver="this.style.color='#{{ service_data.color }}'"
        onMouseOut="this.style.color='#{{ unfocused_color }}'">
 
-      <p>{{service_name}}</p>
+      <p style="text-transform: capitalize;"> {{service_name}} </p>
     </a>
     {%- endif -%}
   
