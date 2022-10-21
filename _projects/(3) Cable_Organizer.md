@@ -1,0 +1,8 @@
+---
+title: Organizador de cables 10cm y 20cm
+tags: [3D, models, Organizer]
+image: ../img/proyects/externos/portada_organizer_cables.png
+description: The goal is to organize the test leads so that they are always quick and easy to use. 
+external_url: https://www.thingiverse.com/thing:5575970
+layout: post
+---
