@@ -20,7 +20,7 @@ Actualmente me encuentro buscando nuevos retos, preferiblemente aquellos que bus
   <div class="col-lg">
     {%- assign unfocused_color = "6c757d" -%}
 
-    <p>Redes: </p>
+    <p style="display: inline-block;" >Redes: </p>
 
     {% for account in site.author %}
 
