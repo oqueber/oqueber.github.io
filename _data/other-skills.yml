@@ -1,11 +1,11 @@
 - name: Machine Learning
   percentage: 40
-  color: '#35ce8d'
+  color: '#2DC84D'
 
 - name: Análisis de datos 
   percentage: 70
-  color: '#F5D547'
+  color: '#FF7F41'
 
 - name: Creatividad
   percentage: 100
-  color: '#4c2c72'
+  color: '#753BBD'
