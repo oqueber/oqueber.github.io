@@ -1,6 +1,6 @@
 - name: Microcontroladores
   percentage: 90
-  color: '#E03C31'
+  color: '#F7EA48'
 
 - name: LINUX Embebido
   percentage: 75
@@ -8,4 +8,4 @@
 
 - name: Desarrollo Web 
   percentage: 70
-  color: '#F7EA48'
+  color: '#E03C31'
