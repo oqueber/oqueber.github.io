@@ -95,3 +95,9 @@ keybase:
   url   : https://www.keybase.io/
   icon  : fab fa-keybase
   color : 66ccff
+  
+thingiverse:
+  url   : https://www.thingiverse.com/
+  icon  : fab fa-cube
+  color : 66ccff
+  
