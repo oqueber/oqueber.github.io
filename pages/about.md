@@ -17,25 +17,27 @@ Actualmente me encuentro buscando nuevos retos, preferiblemente aquellos que bus
 </div>
 
 <div class="row">
-  {%- assign unfocused_color = "6c757d" -%}
-  
-  <p>Redes: </p>
-  
-  {% for account in site.author %}
+  <div class="col-lg">
+    {%- assign unfocused_color = "6c757d" -%}
 
-    {%- assign service_name = account[0] -%}
-    {%- assign service_data = site.data.social-media[service_name] -%}
-    {%- if service_data -%}    
-    <a class="social mx-1"  href="{{ service_data.url }}{{ account[1] }}"
-       style="color: #{{ unfocused_color }}"
-       onMouseOver="this.style.color='#{{ service_data.color }}'"
-       onMouseOut="this.style.color='#{{ unfocused_color }}'">
+    <p>Redes: </p>
 
-      <p style="text-transform: capitalize;"> {{service_name}} </p>
-    </a>
-    {%- endif -%}
-  
-  {% endfor %}
+    {% for account in site.author %}
+
+      {%- assign service_name = account[0] -%}
+      {%- assign service_data = site.data.social-media[service_name] -%}
+      {%- if service_data -%}    
+      <a class="social mx-1"  href="{{ service_data.url }}{{ account[1] }}"
+         style="color: #{{ unfocused_color }}"
+         onMouseOver="this.style.color='#{{ service_data.color }}'"
+         onMouseOut="this.style.color='#{{ unfocused_color }}'">
+
+        <p style="text-transform: capitalize;"> {{service_name}} </p>
+      </a>
+      {%- endif -%}
+
+    {% endfor %}
+  </div>
 </div>
                                                 
 <div class="row">
