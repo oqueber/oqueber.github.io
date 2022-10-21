@@ -1,11 +1,11 @@
 - name: Microcontroladores
   percentage: 90
-  color: danger
+  color: '#CE2D4F'
 
 - name: LINUX Embebido
   percentage: 75
-  color: danger
+  color: '#4392f1'
 
 - name: Desarrollo Web 
   percentage: 70
-  color: #3a6933
+  color: '#FF7F11'
