@@ -5,11 +5,69 @@
     <div id="container" class="my-2">
       <div id="dummy"></div>
       <div id="element">
-        <img style="width: 90%;" src="{{ site.author.image }}" alt="{{ site.title }}" class="circle-image wow animated zoomIn" data-wow-delay=".1s">
+        <div style="width: 90%; position: absolute;">
+            <img style="width: 90%;" src="{{ site.author.image }}" alt="{{ site.title }}" class="circle-image wow animated zoomIn" data-wow-delay=".1s">
+            <div class="circle-holder">
+              <div class="circle red"></div>
+              <div class="circle green"></div>
+              <div class="circle blue"></div>
+            </div>
+        </div>
       </div>
+
     </div>
 
     <p class="mt-4 text-muted wow animated slideInUp" data-wow-delay=".15s">{{ site.description }}</p>
 
   </div>
 </div>
+
+<style>
+.circle-holder {
+  position: absolute;
+  width: 90%;
+  animation: rotate 10s linear infinite;
+  z-index: 0;
+}
+ 
+.circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  border: 10vmin solid white;
+  mix-blend-mode: screen;
+  animation: warp 3s linear alternate infinite;
+  animation-delay: 0s;
+ 
+ .circle.red {
+  border-color: #f00;
+  animation-delay: -1s;
+  }
+  
+.circle.green {
+  border-color: #0f0;
+  animation-delay: -2s;
+}
+  
+ .circle.blue {
+  border-color: #00f;
+}
+  
+@keyframes warp{
+    0%{
+      transform :scale(0.9, 1);}
+    100%{
+      transform :scale(1, 0.9);}
+}
+
+      
+@keyframes rotate{
+    0%{
+      transform: rotate(0deg);}
+    100%{
+      transform: rotate(360deg);}
+}
+</style>
