@@ -15,11 +15,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Oqueber Navarro">
+  <meta property="og:title" content="About">
   <meta property="og:description" content="Hola soy Oqueber Navarro, ingeniero electronico especializado en el area IoT. Me encanta la tecnología, la innovación y los retos de ingeniería.">
   <meta property="og:image" content="/img/foto_perfil.jpg">
 
-  <title>Oqueber Navarro</title>
+  <title>About</title>
   <meta name="description" content="Hola soy Oqueber Navarro, ingeniero electronico especializado en el area IoT. Me encanta la tecnología, la innovación y los retos de ingeniería.">
 
   <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
@@ -57,7 +57,7 @@
 
       <a class="nav-item nav-link " href="/blog/">Blog</a>
 
-      <a class="nav-item nav-link " href="/about/">About</a>
+      <a class="nav-item nav-link active" href="/">About</a>
 
       <a class="nav-item nav-link " href="/handy-links/">Handy Links</a>
 
@@ -71,22 +71,292 @@
   <a href="javascript:window.history.back();">< Back</a>
   <main class="mt-auto flex-shrink-0 container mt-1">
 
-    <div class="row justify-content-center align-items-center">
-  <div class="col-lg-4 col-md-6 text-center">
+    <style>
+  .PageNavigation {
+  font-size: 14px;
+  display: block;
+  width: auto;
+  overflow: hidden;
+}
+
+.PageNavigation a {
+  display: block;
+  width: 50%;
+  float: left;
+  margin: 1em 0;
+}
+
+.PageNavigation .next {
+  text-align: right;
+}
+</style>
+
+
+<div class="col-lg-12 col-md mx-auto markdown-body">
+  <div style="float:left;" class="col-lg-5 col-md-6 text-center">
 
     <!-- Fine Circle Responsive Image -->
     <div id="container" class="my-2">
       <div id="dummy"></div>
       <div id="element">
-        <img style="width: 90%;" src="/img/foto_perfil.jpg" alt="Oqueber Navarro" class="circle-image wow animated zoomIn" data-wow-delay=".1s" />
+        <div style="width: 90%; position: relative;" class="wow animated zoomIn" data-wow-delay=".1s">
+            <img style="width: 85%; position: inherit; z-index: 1;" src="/img/foto_perfil.jpg" alt="Oqueber Navarro" class="circle-image" />
+            <div class="circle-holder">
+              <div class="circle red"></div>
+              <div class="circle green"></div>
+              <div class="circle blue"></div>
+            </div>
+        </div>
       </div>
+
     </div>
 
-    <p class="mt-4 text-muted wow animated slideInUp" data-wow-delay=".15s">Hola soy Oqueber Navarro, ingeniero electronico especializado en el area IoT. Me encanta la tecnología, la innovación y los retos de ingeniería.</p>
+    <!--
+      <p class="mt-4 text-muted wow animated slideInUp" data-wow-delay=".15s">Hola soy Oqueber Navarro, ingeniero electronico especializado en el area IoT. Me encanta la tecnología, la innovación y los retos de ingeniería.</p>
+    -->
 
+  </div>
+
+<style>
+  .circle-holder {
+  position: absolute;
+  width: 95%;
+  animation: rotate 10s linear infinite;
+  z-index: 0;
+  height: 110%;
+  top: -10px;
+  left: 8px;
+}
+ 
+.circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  border: 10vmin solid white;
+  mix-blend-mode: screen;
+  animation: warp 3s linear alternate infinite;
+  animation-delay: 0s;
+}
+ .circle.red {
+  border-color: #f00;
+  animation-delay: -1s;
+  }
+  
+.circle.green {
+  border-color: #0f0;
+  animation-delay: -2s;
+}
+  
+ .circle.blue {
+  border-color: #00f;
+}
+  
+@keyframes warp{
+    0%{
+      transform :scale(0.9, 1);}
+    100%{
+      transform :scale(1, 0.9);}
+}
+
+      
+@keyframes rotate{
+    0%{
+      transform: rotate(0deg);}
+    100%{
+      transform: rotate(360deg);}
+}
+</style>
+
+<h1 id="oqueber-navarro"><strong>Oqueber Navarro</strong></h1>
+
+<p>Hola 👋, soy un apasionado tecnólogo creativo. Me dedico a utilizar la tecnología para imaginar, construir y dar vida a proyectos que abarcan un amplio espectro de disciplinas, desde soluciones prácticas hasta innovaciones artísticas.</p>
+
+<p>Con experiencia trabajando con tecnologías como Raspberry Pi, Arduino y Node.js, me encanta combinar hardware y software para resolver problemas de manera única.</p>
+
+<p>Actualmente, estoy en busca de nuevos retos que impulsen mi creatividad y aporten valor. Si necesitas soluciones tecnológicas fuera de lo común, diseñadas para marcar la diferencia, estaré encantado de colaborar contigo.</p>
+
+<p>🛠️ ¡Hablemos y creemos juntos algo asombroso!</p>
+
+<div class="row">
+<div class="col-lg">
+
+  <h2 class="mb-3">Programación:</h2>
+
+  
+
+  <div class="row justify-content-between align-items-center">
+    <div class="col-10">
+      <p class="mb-1">Microcontroladores</p>
+    </div>
+    <div class="col-2 text-right">
+      <p class="mb-1 text-muted">90%</p>
+    </div>
+  </div>
+
+  <div class="progress mb-4 bg-themed" style="height: 8px;">
+    <div class="progress-bar wow animated slideInLeft" data-wow-delay="0.05" role="progressbar" style="width: 90%; background:#F7EA48" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+    </div>
+  </div>
+
+  
+
+  <div class="row justify-content-between align-items-center">
+    <div class="col-10">
+      <p class="mb-1">LINUX Embebido</p>
+    </div>
+    <div class="col-2 text-right">
+      <p class="mb-1 text-muted">75%</p>
+    </div>
+  </div>
+
+  <div class="progress mb-4 bg-themed" style="height: 8px;">
+    <div class="progress-bar wow animated slideInLeft" data-wow-delay="0.1" role="progressbar" style="width: 75%; background:#147BD1" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+    </div>
+  </div>
+
+  
+
+  <div class="row justify-content-between align-items-center">
+    <div class="col-10">
+      <p class="mb-1">Desarrollo Web</p>
+    </div>
+    <div class="col-2 text-right">
+      <p class="mb-1 text-muted">70%</p>
+    </div>
+  </div>
+
+  <div class="progress mb-4 bg-themed" style="height: 8px;">
+    <div class="progress-bar wow animated slideInLeft" data-wow-delay="0.15" role="progressbar" style="width: 70%; background:#E03C31" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+    </div>
+  </div>
+
+  
+
+</div>
+
+<div class="col-lg">
+
+  <h2 class="mb-3">Habilidades:</h2>
+
+  
+
+  <div class="row justify-content-between align-items-center">
+    <div class="col-10">
+      <p class="mb-1">Machine Learning</p>
+    </div>
+    <div class="col-2 text-right">
+      <p class="mb-1 text-muted">40%</p>
+    </div>
+  </div>
+
+  <div class="progress mb-4 bg-themed" style="height: 8px;">
+    <div class="progress-bar wow animated slideInLeft" data-wow-delay="0.05" role="progressbar" style="width: 40%; background:#2DC84D" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+    </div>
+  </div>
+
+  
+
+  <div class="row justify-content-between align-items-center">
+    <div class="col-10">
+      <p class="mb-1">Análisis de datos</p>
+    </div>
+    <div class="col-2 text-right">
+      <p class="mb-1 text-muted">70%</p>
+    </div>
+  </div>
+
+  <div class="progress mb-4 bg-themed" style="height: 8px;">
+    <div class="progress-bar wow animated slideInLeft" data-wow-delay="0.1" role="progressbar" style="width: 70%; background:#FF7F41" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+    </div>
+  </div>
+
+  
+
+  <div class="row justify-content-between align-items-center">
+    <div class="col-10">
+      <p class="mb-1">Creatividad</p>
+    </div>
+    <div class="col-2 text-right">
+      <p class="mb-1 text-muted">100%</p>
+    </div>
+  </div>
+
+  <div class="progress mb-4 bg-themed" style="height: 8px;">
+    <div class="progress-bar wow animated slideInLeft" data-wow-delay="0.15" role="progressbar" style="width: 100%; background:#753BBD" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+    </div>
+  </div>
+
+  
+
+</div>
+
+</div>
+
+<div class="row">
+  <div class="col-lg"><p style="display: inline-block;">Redes: </p>
+
+    <a class="social mx-1" href="https://www.github.com/oqueber" style="color: #6c757d" onmouseover="this.style.color='#333333'" onmouseout="this.style.color='#6c757d'">
+
+        <p style="text-transform: capitalize;"> github </p>
+      </a><a class="social mx-1" href="https://www.linkedin.com/in/oqueber-daizar-navarro-perez-712388141" style="color: #6c757d" onmouseover="this.style.color='#007bb5'" onmouseout="this.style.color='#6c757d'">
+
+        <p style="text-transform: capitalize;"> linkedin </p>
+      </a><a class="social mx-1" href="https://www.thingiverse.com/oqueber" style="color: #6c757d" onmouseover="this.style.color='#66ccff'" onmouseout="this.style.color='#6c757d'">
+
+        <p style="text-transform: capitalize;"> thingiverse </p>
+      </a>
   </div>
 </div>
 
+<div class="row">
+<div class="col mt-4">
+  <div class="timeline-body bg-themed">
+    
+      <div class="timeline-item">
+        <div class="content">
+          <h2>INELCOM SPAIN</h2>
+          <h6 class="date">Septiembre 2020 — ACTUALIDAD</h6>
+          <p><h4>Programador de sistemas embebidos</h4> <ul><li>Planificación, implementación y gestión técnica para proyectos de telecomunicaciones.</li><li>Diseño, desarrollo y ejecución de pruebas de nuevos equipos electrónicos para sistemas de telecomunicaciones.</li><li>Análisis e interpretación de datos.</li><li>Investigación de nuevas tecnologías para proyectos de telecomunicaciones.</li><li>Análisis de señales de control para instalaciones y equipos de telecomunicaciones.</li><li>Lectura e interpretación de documentación técnica.</li><li>Programación de microcontroladores de 8 bits (NXP) (PIC18F) y 32 bits (STM32).</li><li>Programación de procesadores Linux embebidos, principalmente raspbian.</li><li>Desarrollo e Implementación de protocolos de comunicación industrial como Modbus (TCP / IP y RTU) y SNMP, haciendo uso de RS232, RS485 y Ethernet.</li><li>Desarrollo e Implementación de protocolos de comunicación con microcontroladores y procesadores como el I2C, SPI, UART, USB, WiFi, Bluetooth, NFC.</li><li>Leer más</li><li>Detección de problemas y mal funcionamiento en equipos electrónicos.</li><li>Manejo de equipamiento de laboratorio.</li><li>Hoja de especificación electrónica, circuitos electrónicos, instrumentaciones electrónicas, definición hardware, etc.</li> <li>Soporté técnico a cliente.</li><li>Redacción de documentación técnica como manual de usuario, pruebas de validación y reportes de verificación.</li><li>Manejo de versiones con GitLab.</li></ul> <div> <spam class="badge badge-pill text-primary border border-primary ml-1">#Investigacion</spam> <spam class="badge badge-pill text-primary border border-primary ml-1">#C</spam> <spam class="badge badge-pill text-primary border border-primary ml-1">#FreeRTOS</spam> <spam class="badge badge-pill text-primary border border-primary ml-1">#PYTHON</spam> <spam class="badge badge-pill text-primary border border-primary ml-1">#IoT</spam> <spam class="badge badge-pill text-primary border border-primary ml-1">#GitLab</spam> <spam class="badge badge-pill text-primary border border-primary ml-1">#Microcontroladores</spam> <spam class="badge badge-pill text-primary border border-primary ml-1">#Microprocesadores</spam> <spam class="badge badge-pill text-primary border border-primary ml-1">#STM32</spam> <spam class="badge badge-pill text-primary border border-primary ml-1">#AnalisisDeDatos</spam> <spam class="badge badge-pill text-primary border border-primary ml-1">#Industry4.0</spam> </div> </p>
+        </div>
+      </div>
+    
+      <div class="timeline-item">
+        <div class="content">
+          <h2>CELLNEX TELECOM SPAIN</h2>
+          <h6 class="date">Junio 2020 — Agosto 2020</h6>
+          <p><h4><spam>[PRACTICAS]</spam>INNOVATION PRODUCT</h4> <ul><li>Investigación de nuevos productos o tecnologías en el mercado.</li><li>Redacción de artículos sobre las tecnologías emergentes y sus casos de uso.</li><li>Seguimiento a corto y largo plazo de proyectos de innovación tecnológica.</li></ul> <div> <spam class="badge badge-pill text-primary border border-primary ml-1">#Innovacion</spam> </div> </p>
+        </div>
+      </div>
+    
+      <div class="timeline-item">
+        <div class="content">
+          <h2>INDRA SPAIN</h2>
+          <h6 class="date">ABRIL 2019 — ENERO 2020</h6>
+          <p> <h4><spam>[PRACTICAS]</spam> DESARROLLO DE FIRMWARE PARA EL DEPARTAMENTO DE IFF</h4><ul><li>Diseño, desarrollo y pruebas de integración para equipos de Defensa Aérea, vigilancia y control del espacio aéreo.</li><li>Lectura de documentación técnica sobre protocolos de comunicaciones.</li><li>Conocimientos en control de versiones de proyecto tortoise svn.</li><li>Detección de errores en el funcionamiento de PCBs.</li><li>Lectura de esquemáticos de PCB.</li><li>Modelado de circuitos electrónicos con VHDL en las diferentes versiones del Quartus (6.1, 10, 13 y 18).</li>  <li>Realización de pruebas simuladas en bancos de prueba.</li><li>Manejo de equipamiento de laboratorio: osciloscopio, polímetro, analizador de espectro y power meter rf.</li>  <li>Conocimiento en sistemas de radar y comunicaciones aeronáuticas para civiles y militares.</li></ul><div><spam class="badge badge-pill text-primary border border-primary ml-1">#VHDL</spam><spam class="badge badge-pill text-primary border border-primary ml-1">#MILITAR</spam><spam class="badge badge-pill text-primary border border-primary ml-1">#RADAR</spam><spam class="badge badge-pill text-primary border border-primary ml-1">#IFF</spam><spam class="badge badge-pill text-primary border border-primary ml-1">#Quartus</spam><spam class="badge badge-pill text-primary border border-primary ml-1">#Osciloscopio</spam></div> </p>
+        </div>
+      </div>
+    
+      <div class="timeline-item">
+        <div class="content">
+          <h2>EVERIS SPAIN</h2>
+          <h6 class="date">SEPTIEMBRE 2018 — ABRIL 2019</h6>
+          <p> <h4><spam>[PRACTICAS]</spam> DESARROLLO DE NUEVAS TECNOLOGÍAS CON INTELIGENCIA ARTIFICIAL.</h4> <ul><li>Presentación de avances tecnológicos en el mercado.</li><li>Investigación y elaboración de pruebas de concepto con modelos de inteligencia artificial. </li><li>Programación con C, Python, HTML5/CC3/JavaScript, Vue.js, NodeJs. </li><li>Conocimiento en TensorFlow, Firebase.</li><li>Análisis e interpretación de datos.</li><li>Almacenamiento de métricas y datos en base de datos no relacional (MongoDB).</li>  <li>Pruebas de integración entre sistemas de adquisición de datos y representación de datos.</li><li>Selección del Hardware óptimo para el proyecto.</li></ul><div><spam class="badge badge-pill text-primary border border-primary ml-1">#TensorFlow</spam><spam class="badge badge-pill text-primary border border-primary ml-1">#Firebase</spam><spam class="badge badge-pill text-primary border border-primary ml-1">#IA</spam><spam class="badge badge-pill text-primary border border-primary ml-1">#MongoDB</spam></div> </p>
+        </div>
+      </div>
+    
+  </div>
+</div>
+</div>
+
+</div>
+
+<div class="PageNavigation">
+  
+  
+</div>
   </main>
   <footer style="background-color: #e2e4e7  ;"  class="mt-auto py-3 text-center">
 
@@ -95,24 +365,22 @@
     by <strong>Oqueber Navarro</strong>
   </small>
 
-  <div class="container-fluid justify-content-center"><a class="social mx-1"  href="mailto:oqueber_2324@hotmail.com"
-       style="color: #6c757d"
-       onMouseOver="this.style.color='#db4437'"
-       onMouseOut="this.style.color='#6c757d'">
-      <i class="fas fa-envelope fa-1x"></i>
-    </a><a class="social mx-1"  href="https://www.github.com/oqueber"
+  <div class="container-fluid justify-content-center"><a class="social mx-1"  href="https://www.github.com/oqueber"
        style="color: #6c757d"
        onMouseOver="this.style.color='#333333'"
-       onMouseOut="this.style.color='#6c757d'">
-      <i class="fab fa-github fa-1x"></i>
-    </a><a class="social mx-1"  href="https://www.linkedin.com/in/oqueber"
+       onMouseOut="this.style.color='#6c757d'"><i class="fab fa-github fa-1x"></i></a><a class="social mx-1"  href="https://www.linkedin.com/in/oqueber-daizar-navarro-perez-712388141"
        style="color: #6c757d"
        onMouseOver="this.style.color='#007bb5'"
-       onMouseOut="this.style.color='#6c757d'">
-      <i class="fab fa-linkedin-in fa-1x"></i>
-    </a>
+       onMouseOut="this.style.color='#6c757d'"><i class="fab fa-linkedin-in fa-1x"></i></a><a class="social mx-1"  href="https://www.thingiverse.com/oqueber"
+       style="color: #6c757d"
+       onMouseOver="this.style.color='#66ccff'"
+       onMouseOut="this.style.color='#6c757d'"><svg style="margin-top: -5px;" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" height="17" width="17">
+        <path d="M11.955.005C5.425-.152-.091 5.485.007 11.805c-.235 6.756 5.537 12.25 12.052 12.196C18.621 23.9 23.912 18.595 24 12.03 24.031 5.483 18.505-.18 11.955.005zm-.047 1.701a10.276 10.276 0 0 1 7.36 17.529 10.275 10.275 0 0 1-17.556-7.287C1.71 6.308 6.268 1.728 11.907 1.706zm-5.55 4.781c-.322 0-.358.033-.358.361v2.248c0 .351.04.391.398.391h3.823c.274 0 .274.004.274.265v9.736a.176.176 0 0 0 .051.146c.04.038.093.059.148.053h2.555c.247-.003.283-.035.283-.28v-9.32c0-.124.004-.239 0-.39s.055-.21.218-.21h3.9c.319.004.35-.032.35-.344V6.855c0-.34-.024-.363-.37-.363h-5.626z" fill="#6c757d" stroke="#6c757d"" stroke-width="1">
+        </path>
+      </svg></a>
 
 </div>
+
 
 </footer>
 
