@@ -1,0 +1,30 @@
+- skill:
+  name: Lenguajes de Programación
+  tags: 
+    - Python 
+    - C
+    - JavaScript
+    - VHDL
+
+- skill:
+  name: Hardware
+  tags: 
+    - Zephyr
+    - FreeRTOS
+    - STM32H7 (ST)
+    - RT1050 (NXP)
+    - Renesas
+    - PIC18F.
+
+- skill:
+  name: Protocolos de Comunicación
+  tags:
+    - I2C
+    - SPI
+    - UART
+    - USB
+    - WiFi
+    - Bluetooth
+    - NFC
+    - Modbus
+    - SNMP

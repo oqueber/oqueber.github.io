@@ -1,103 +1,91 @@
-- title: INELCOM SPAIN 
-  from: Septiembre 2020
+- company: RBZ Robot Design 
+  from: Diciembre 2022
   to: ACTUALIDAD
-  description: "<h4>Programador de sistemas embebidos</h4> \
-                <ul>\
-                <li>Planificación, implementación y gestión técnica para proyectos de telecomunicaciones.</li>\
-                <li>Diseño, desarrollo y ejecución de pruebas de nuevos equipos electrónicos para sistemas de telecomunicaciones.</li>\
-                <li>Análisis e interpretación de datos.</li>\
-                <li>Investigación de nuevas tecnologías para proyectos de telecomunicaciones.</li>\
-                <li>Análisis de señales de control para instalaciones y equipos de telecomunicaciones.</li>\
-                <li>Lectura e interpretación de documentación técnica.</li>\
-                <li>Programación de microcontroladores de 8 bits (NXP) (PIC18F) y 32 bits (STM32).</li>\
-                <li>Programación de procesadores Linux embebidos, principalmente raspbian.</li>\
-                <li>Desarrollo e Implementación de protocolos de comunicación industrial como Modbus (TCP / IP y RTU) y SNMP, haciendo uso de RS232, RS485 y Ethernet.</li>\
-                <li>Desarrollo e Implementación de protocolos de comunicación con microcontroladores y procesadores como el I2C, SPI, UART, USB, WiFi, Bluetooth, NFC.</li>\
-                <li>Leer más</li>\
-                <li>Detección de problemas y mal funcionamiento en equipos electrónicos.</li>\
-                <li>Manejo de equipamiento de laboratorio.</li>\
-                <li>Hoja de especificación electrónica, circuitos electrónicos, instrumentaciones electrónicas, definición hardware, etc.</li> \
-                <li>Soporté técnico a cliente.</li>\
-                <li>Redacción de documentación técnica como manual de usuario, pruebas de validación y reportes de verificación.</li>\
-                <li>Manejo de versiones con GitLab.</li>\
-                </ul>
-                <div>
-                <spam class='badge badge-pill text-primary border border-primary ml-1'>#Investigacion</spam>
-                <spam class='badge badge-pill text-primary border border-primary ml-1'>#C</spam>
-                <spam class='badge badge-pill text-primary border border-primary ml-1'>#FreeRTOS</spam>
-                <spam class='badge badge-pill text-primary border border-primary ml-1'>#PYTHON</spam>
-                <spam class='badge badge-pill text-primary border border-primary ml-1'>#IoT</spam>
-                <spam class='badge badge-pill text-primary border border-primary ml-1'>#GitLab</spam>
-                <spam class='badge badge-pill text-primary border border-primary ml-1'>#Microcontroladores</spam>
-                <spam class='badge badge-pill text-primary border border-primary ml-1'>#Microprocesadores</spam>
-                <spam class='badge badge-pill text-primary border border-primary ml-1'>#STM32</spam>
-                <spam class='badge badge-pill text-primary border border-primary ml-1'>#AnalisisDeDatos</spam>
-                <spam class='badge badge-pill text-primary border border-primary ml-1'>#Industry4.0</spam>
-                </div>
-                "
+  job: Ingeniero de Firmware
+  description: 
+    - Lideré la planificación, implementación y gestión técnica de proyectos de telecomunicaciones.
+    - Diseñé y desarrollé la logica para equipos médicos, cumpliendo estrictos estándares regulatorios y mejorando la fiabilidad del hardware.
+    - Implementé y optimicé protocolos de comunicación (I2C, SPI, UART, USB, WiFi, Bluetooth, NFC) en microcontroladores de 32 bits (NXP, Renesas y STM32).
+    - Integré Zephyr RTOS en sistemas embebidos, logrando una mayor estabilidad y escalabilidad en proyectos de IoT.
+    - Supervisé la puesta en marcha de hardware, incluyendo detección y solución de problemas críticos en equipos electrónicos complejos.
+    - Gestioné versiones de software y firmware utilizando GitLab, garantizando un control eficiente y colaborativo del desarrollo.
+  tags:
+    - Zephyr
+    - Python
+    - STM32
+    - Renesas
+    - NXP
+    - GitLab
+    - Análisis de Datos
+    - Laboratorio Electrónico.
 
-- title: CELLNEX TELECOM SPAIN 
+- company: INELCOM SPAIN 
+  from: Septiembre 2020
+  to: Diciembre 2022
+  job: Programador de sistemas embebidos
+  description: 
+    - Diseñé y desarrollé pruebas de validación para nuevos equipos electrónicos.
+    - Implementé protocolos de comunicación industrial como Modbus (TCP/IP, RTU) y SNMP, optimizando la integración con sistemas RS232, RS485 y Ethernet.
+    - Programé microcontroladores de 8 y 32 bits (NXP, PIC18F, STM32) y procesadores embebidos Linux (Raspbian), adaptando soluciones para entornos IoT.
+    - Realicé análisis avanzado de señales de control en instalaciones, mejorando el tiempo de respuesta en sistemas críticos.
+    - Introduje nuevas tecnologías, incluyendo soluciones de IoT y sistemas basados en FreeRTOS, que impulsaron la adopción de la Industria 4.0 en proyectos.
+    - Redacté documentación técnica completa; manuales de usuario, reportes de verificación y pruebas de validación.
+    - Implementé metodologías de control de versiones con GitLab para asegurar trazabilidad y eficiencia en proyectos de firmware.
+  tags:
+    - C
+    - FreeRTOS
+    - Python
+    - IoT
+    - STM32
+    - Modbus
+    - Industry 4.0
+
+- company: CELLNEX TELECOM SPAIN 
   from: Junio 2020
   to: Agosto 2020
-  description: "<h4><spam>[PRACTICAS]</spam>INNOVATION PRODUCT</h4> \
-  <ul>\
-    <li>Investigación de nuevos productos o tecnologías en el mercado.</li>\
-    <li>Redacción de artículos sobre las tecnologías emergentes y sus casos de uso.</li>\
-    <li>Seguimiento a corto y largo plazo de proyectos de innovación tecnológica.</li>\
-  </ul>
-  <div>
-    <spam class='badge badge-pill text-primary border border-primary ml-1'>#Innovacion</spam>
-  </div>
-  "
+  job: INNOVATION PRODUCT INTERN
+  description: 
+    - Realicé investigaciones exhaustivas sobre tecnologías emergentes como 5G y IoT, generando reportes estratégicos para su aplicación en proyectos a largo plazo.
+    - Elaboré artículos técnicos sobre casos de uso innovadores, fortaleciendo la comunicación de avances tecnológicos a los stakeholders.
+    - Supervisé el progreso de proyectos de innovación, asegurando la alineación con objetivos comerciales y tecnológicos.
+  tags:
+    - Innovación
+    - Telecomunicaciones
+    - Gestión de Proyectos
 
-
-- title: INDRA SPAIN
+- company: INDRA SPAIN 
   from: ABRIL 2019 
   to: ENERO 2020
-  description: "
-  <h4><spam>[PRACTICAS]</spam> DESARROLLO DE FIRMWARE PARA EL DEPARTAMENTO DE IFF</h4>\
-  <ul>\
-    <li>Diseño, desarrollo y pruebas de integración para equipos de Defensa Aérea, vigilancia y control del espacio aéreo.</li>\
-    <li>Lectura de documentación técnica sobre protocolos de comunicaciones.</li>\
-    <li>Conocimientos en control de versiones de proyecto tortoise svn.</li>\
-    <li>Detección de errores en el funcionamiento de PCBs.</li>\
-    <li>Lectura de esquemáticos de PCB.</li>\
-    <li>Modelado de circuitos electrónicos con VHDL en las diferentes versiones del Quartus (6.1, 10, 13 y 18).</li>\ 
-    <li>Realización de pruebas simuladas en bancos de prueba.</li>\
-    <li>Manejo de equipamiento de laboratorio: osciloscopio, polímetro, analizador de espectro y power meter rf.</li>\ 
-    <li>Conocimiento en sistemas de radar y comunicaciones aeronáuticas para civiles y militares.</li>\
-  </ul>\
-  <div>\
-    <spam class='badge badge-pill text-primary border border-primary ml-1'>#VHDL</spam>\
-    <spam class='badge badge-pill text-primary border border-primary ml-1'>#MILITAR</spam>\
-    <spam class='badge badge-pill text-primary border border-primary ml-1'>#RADAR</spam>\
-    <spam class='badge badge-pill text-primary border border-primary ml-1'>#IFF</spam>\
-    <spam class='badge badge-pill text-primary border border-primary ml-1'>#Quartus</spam>\
-    <spam class='badge badge-pill text-primary border border-primary ml-1'>#Osciloscopio</spam>\
-  </div>
-  "
+  job: "Practicante de Desarrollo de Firmware - Departamento IFF"
+  description: 
+    - Diseñé, desarrollé y realicé pruebas de integración para equipos de defensa aérea.
+    - Modelé circuitos electrónicos utilizando VHDL en Quartus.
+    - Detecté y solucioné problemas en PCBs y sistemas de radar, mejorando la estabilidad operativa de los equipos.
+    - Implementé simulaciones en bancos de prueba utilizando osciloscopios, analizadores de espectro y power meters RF.
+    - Colaboré en el análisis de sistemas de comunicación aeronáuticos civiles y militares, garantizando el cumplimiento de estándares internacionales.
+  tags:
+    - VHDL
+    - MILITAR
+    - Sistemas de Radar
+    - IFF
+    - Quartus
+    - Osciloscopio
 
-
-- title: EVERIS SPAIN
+- company: EVERIS SPAIN
   from: SEPTIEMBRE 2018
   to: ABRIL 2019
-  description: "
-  <h4><spam>[PRACTICAS]</spam> DESARROLLO DE NUEVAS TECNOLOGÍAS CON INTELIGENCIA ARTIFICIAL.</h4>
-  <ul>\
-    <li>Presentación de avances tecnológicos en el mercado.</li>\
-    <li>Investigación y elaboración de pruebas de concepto con modelos de inteligencia artificial. </li>\
-    <li>Programación con C, Python, HTML5/CC3/JavaScript, Vue.js, NodeJs. </li>\
-    <li>Conocimiento en TensorFlow, Firebase.</li>\
-    <li>Análisis e interpretación de datos.</li>\
-    <li>Almacenamiento de métricas y datos en base de datos no relacional (MongoDB).</li>\ 
-    <li>Pruebas de integración entre sistemas de adquisición de datos y representación de datos.</li>\
-    <li>Selección del Hardware óptimo para el proyecto.</li>\
-  </ul>\
-  <div>\
-    <spam class='badge badge-pill text-primary border border-primary ml-1'>#TensorFlow</spam>\
-    <spam class='badge badge-pill text-primary border border-primary ml-1'>#Firebase</spam>\
-    <spam class='badge badge-pill text-primary border border-primary ml-1'>#IA</spam>\
-    <spam class='badge badge-pill text-primary border border-primary ml-1'>#MongoDB</spam>\
-  </div>
-  "
-  
+  job: Practicante de Nuevas Tecnologías e Inteligencia Artificial
+  description: 
+    - Desarrollé pruebas de concepto en IA utilizando TensorFlow, logrando modelos con un 85% de precisión en clasificación de datos.
+    - Programé soluciones integradas con tecnologías modernas (Python, C, JavaScript, Vue.js, Node.js).
+    - Diseñé bases de datos no relacionales (MongoDB) para almacenamiento eficiente de métricas y datos procesados.
+    - Elaboré análisis de mercado sobre avances en IA, presentando propuestas estratégicas a clientes para su implementación.
+    - Identifiqué y seleccioné hardware adecuado para proyectos tecnológicos, optimizando costos y rendimiento.
+  tags:
+    - TensorFlow
+    - Firebase
+    - Python
+    - Vue.js
+    - Node.js
+    - IA
+    - MongoDB

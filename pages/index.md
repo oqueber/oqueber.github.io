@@ -11,19 +11,12 @@ weight: 3
 
 Hola 👋, soy un apasionado tecnólogo creativo. Me dedico a utilizar la tecnología para imaginar, construir y dar vida a proyectos que abarcan un amplio espectro de disciplinas, desde soluciones prácticas hasta innovaciones artísticas.
 
-Con experiencia trabajando con tecnologías como Raspberry Pi, Arduino y Node.js, me encanta combinar hardware y software para resolver problemas de manera única.
+Con experiencia trabajando con tecnologías como Raspberry Pi, ESP32, Arduino y Node.js, me encanta combinar hardware y software para resolver problemas de manera única.
 
 Actualmente, estoy en busca de nuevos retos que impulsen mi creatividad y aporten valor. Si necesitas soluciones tecnológicas fuera de lo común, diseñadas para marcar la diferencia, estaré encantado de colaborar contigo.
 
-🛠️ ¡Hablemos y creemos juntos algo asombroso!
-
 <div class="row">
-{% include about/skills.html title="Programación:" source=site.data.programming-skills %}
-{% include about/skills.html title="Habilidades:" source=site.data.other-skills %}
-</div>
-
-<div class="row">
-  <div class="col-lg">
+  <div>
     {%- assign unfocused_color = "6c757d" -%}
 
     <p style="display: inline-block;" >Redes: </p>
@@ -45,7 +38,13 @@ Actualmente, estoy en busca de nuevos retos que impulsen mi creatividad y aporte
     {% endfor %}
   </div>
 </div>
-                                                
+
+<!--
 <div class="row">
+{% include about/skills_resumen.html source=site.data.skills_resumen %}
+</div>
+-->
+
+<div class="row" style="display: block;">
 {% include about/timeline.html %}
 </div>

@@ -1,0 +1,16 @@
+<div class="col-12">
+
+  <h4>RESUMEN:</h4>
+  {% for skill in include.source %}
+  <div>
+
+    <h4 style="display: inline-block;" class="mr-2">{{ skill.name }}: </h4>
+    
+    {% for tag in skill.tags %}
+    <p style="display: inline-block;" class="badge badge-pill border">#{{ tag }}</p>
+    {% endfor %}
+    
+  </div>
+  {% endfor %}
+</div>
+
