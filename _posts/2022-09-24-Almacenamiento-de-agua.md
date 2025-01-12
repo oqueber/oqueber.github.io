@@ -1,7 +1,7 @@
 ---
 title: Almacenamiento de agua para huertos urbanos
 tags: [huerto]
-image: ../img/posts/2022-09-24-Almacenamiento-de-agua/Paso_19.jpg"
+image: ../img/posts/2022-09-24-Almacenamiento-de-agua/portada.jpg"
 style: border 
 ---
 
