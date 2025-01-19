@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "Seguimiento de habitos",
+      "category" : "",
+      "tags"     : "idea, project",
+      "url"      : "/blog/seguimiento-de-habitos",
+      "date"     : "2025-01-19 00:00:00 +0100"
+    } ,
+  
+    {
       "title"    : "Almacenamiento de agua para huertos urbanos",
       "category" : "",
       "tags"     : "huerto",
