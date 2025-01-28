@@ -1,7 +1,7 @@
 ---
 title: Seguimiento de habitos
+url-img: ../img/posts/2025-01-19-seguimiento-de-habitos/
+head: poster.jpg
 tags:  [idea, project]
-style: border 
-image: ../img/posts/2025-01-19-seguimiento-de-habitos/poster.jpg
+process: [ ] 
 ---
-<img src="/img/posts/2025-01-19-seguimiento-de-habitos/poster.jpg" class="d-block w-100" alt="...">

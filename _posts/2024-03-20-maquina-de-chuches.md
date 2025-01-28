@@ -1,7 +1,7 @@
 ---
-title: Seguimiento de habitos
+title: Maquina de chuches
+url-img: ../img/posts/2024-03-20-maquina-de-chuches/
+head: poster.jpg
 tags:  [idea, project]
-style: border 
-image: ../img/posts/2024-03-20-maquina-de-chuches/poster.jpg
+process: [ ] 
 ---
-<img src="/img/posts/2024-03-20-maquina-de-chuches/poster.jpg" class="d-block w-100" alt="...">

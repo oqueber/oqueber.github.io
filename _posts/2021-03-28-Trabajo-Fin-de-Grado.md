@@ -1,14 +1,14 @@
 ---
 title: Diseño de un huerto urbano inteligente y autónomo
+url-img: ../img/posts/tfg/
+head: portada.png
 tags: [C, Javascript, HTML5, CSS3, MQTT, ESP32]
-image: ../img/proyects/tfg/portada.png
-description: Este proyecto consiste en el diseño de una alternativa a los sistemas comerciales de huerto inteligente, teniendo en cuenta la escalabilidad, la personalización y el respeto con el medio ambiente.
-layout: post
+process: [ ] 
 ---
 
-Este proyecto consiste en el diseño de una alternativa a los sistemas comerciales de huerto inteligente, teniendo en cuenta la escalabilidad, la personalización y el respeto con el medio ambiente.
+## Intro
 
-![preview](../img/proyects/tfg/portada.png)
+Este proyecto consiste en el diseño de una alternativa a los sistemas comerciales de huerto inteligente, teniendo en cuenta la escalabilidad, la personalización y el respeto con el medio ambiente.
 
 ## Resumen
 

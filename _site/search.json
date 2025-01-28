@@ -1,7 +1,7 @@
 [
   
     {
-      "title"    : "Seguimiento de habitos",
+      "title"    : "Ayudante de oficina",
       "category" : "",
       "tags"     : "idea, project",
       "url"      : "/blog/ayudante-de-oficina",
@@ -17,7 +17,7 @@
     } ,
   
     {
-      "title"    : "Seguimiento de habitos",
+      "title"    : "Camara salvaje",
       "category" : "",
       "tags"     : "idea, project",
       "url"      : "/blog/camara-salvaje",
@@ -25,7 +25,7 @@
     } ,
   
     {
-      "title"    : "Seguimiento de habitos",
+      "title"    : "Maquina de chuches",
       "category" : "",
       "tags"     : "idea, project",
       "url"      : "/blog/maquina-de-chuches",
@@ -41,7 +41,7 @@
     } ,
   
     {
-      "title"    : "Seguimiento de habitos",
+      "title"    : "Cuadro inteligente",
       "category" : "",
       "tags"     : "idea, project",
       "url"      : "/blog/cuadro-inteligente",
@@ -49,35 +49,35 @@
     } ,
   
     {
-      "title"    : "¿Que es la resistencia electica?",
+      "title"    : "Almacenamiento vertical para componentes electrónicos.",
       "category" : "",
-      "tags"     : "basico, Ley-de-Ohm",
-      "url"      : "/blog/resistencia-electrica",
-      "date"     : "2016-08-30 00:00:00 +0200"
+      "tags"     : "3D, models, Organizer",
+      "url"      : "/blog/VeBox",
+      "date"     : "2021-03-28 00:00:00 +0100"
     } ,
   
     {
-      "title"    : "¿Que es el voltaje?",
+      "title"    : "Diseño de un huerto urbano inteligente y autónomo",
       "category" : "",
-      "tags"     : "basico, Ley-de-Ohm",
-      "url"      : "/blog/que-es-el-voltaje",
-      "date"     : "2016-08-30 00:00:00 +0200"
+      "tags"     : "C, Javascript, HTML5, CSS3, MQTT, ESP32",
+      "url"      : "/blog/Trabajo-Fin-de-Grado",
+      "date"     : "2021-03-28 00:00:00 +0100"
     } ,
   
     {
-      "title"    : "¿Que es el jostyck?",
+      "title"    : "Organizador de cables 10cm y 20cm",
       "category" : "",
-      "tags"     : "basico, joystick, sensores",
-      "url"      : "/blog/que-es-el-joystick",
-      "date"     : "2016-08-30 00:00:00 +0200"
+      "tags"     : "3D, models, Organizer",
+      "url"      : "/blog/Cable-Organizer",
+      "date"     : "2021-03-28 00:00:00 +0100"
     } ,
   
     {
-      "title"    : "¿Que es la corriente electrica?",
+      "title"    : "Organizador de cables 10cm y 20cm V2",
       "category" : "",
-      "tags"     : "basico, Ley-de-Ohm",
-      "url"      : "/blog/corriente-electrica",
-      "date"     : "2016-08-30 00:00:00 +0200"
+      "tags"     : "3D, models, Organizer",
+      "url"      : "/blog/Cable-Organizer-V2",
+      "date"     : "2021-03-28 00:00:00 +0100"
     } 
   
 ]

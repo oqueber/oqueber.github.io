@@ -1,7 +1,7 @@
 ---
-title: Seguimiento de habitos
+title: Ayudante de oficina
+url-img: ../img/posts/2025-01-27-ayudante-de-oficina/
+head: poster.jpg
 tags:  [idea, project]
-style: border 
-image: ../img/posts/2025-01-27-ayudante-de-oficina/poster.jpg
+process: [ ] 
 ---
-<img src="/img/posts/2025-01-27-ayudante-de-oficina/poster.jpg" class="d-block w-100" alt="...">

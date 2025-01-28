@@ -1,7 +1,7 @@
 ---
-title: Seguimiento de habitos
+title: Camara salvaje
+url-img: ../img/posts/2024-04-03-camara-salvaje/
+head: poster.jpg
 tags:  [idea, project]
-style: border 
-image: ../img/posts/2024-04-03-camara-salvaje/poster.jpg
+process: [ ] 
 ---
-<img src="/img/posts/2024-04-03-camara-salvaje/poster.jpg" class="d-block w-100" alt="...">

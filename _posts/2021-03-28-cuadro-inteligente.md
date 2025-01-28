@@ -1,7 +1,7 @@
 ---
-title: Seguimiento de habitos
+title: Cuadro inteligente
+url-img: ../img/posts/2021-03-28-cuadro-inteligente/
+head: poster.jpg
 tags:  [idea, project]
-style: border 
-image: ../img/posts/2021-03-28-cuadro-inteligente/poster.jpg
+process: [ ] 
 ---
-<img src="/img/posts/2021-03-28-cuadro-inteligente/poster.jpg" class="d-block w-100" alt="...">

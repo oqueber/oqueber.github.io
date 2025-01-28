@@ -28,6 +28,10 @@ layout: page
 
 </p>
 
+{%- if page.process -%}
+{% include blog/carousel-item.html %}
+{%- endif -%}
+
 {{ content }}
 
 {% if page.comments %}
