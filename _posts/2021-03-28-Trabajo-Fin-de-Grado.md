@@ -1,9 +1,31 @@
 ---
 title: Diseño de un huerto urbano inteligente y autónomo
 url-img: ../img/posts/tfg/
-head: portada.png
+head: portada.jpg
 tags: [C, Javascript, HTML5, CSS3, MQTT, ESP32]
-process: [ ] 
+process: [  [ppt_1-min.png, ],
+            [ppt_2-min.png, ],
+            [ppt_3-min.png, ],
+            [ppt_4-min.png, ],
+            [ppt_5-min.png, ],
+            [ppt_6-min.png, ],
+            [ppt_7-min.png, ],
+            [ppt_8-min.png, ],
+            [ppt_9-min.png, ],
+            [ppt_10-min.png, ],
+            [ppt_11-min.png, ],
+            [ppt_12-min.png, ],
+            [ppt_13-min.png, ],
+            [ppt_14-min.png, ],
+            [ppt_15-min.png, ],
+            [ppt_16-min.png, ],
+            [ppt_17-min.png, ],
+            [ppt_18-min.png, ],
+            [ppt_19-min.png, ],
+            [ppt_20-min.png, ],
+            [ppt_21-min.png, ],
+            [ppt_22-min.png, ],
+            [ppt_23-min.png, ]] 
 ---
 
 ## Intro

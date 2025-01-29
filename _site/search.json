@@ -5,7 +5,7 @@
       "category" : "",
       "tags"     : "idea, project",
       "url"      : "/blog/ayudante-de-oficina",
-      "date"     : "2025-01-27 00:00:00 +0100"
+      "date"     : "2025-01-29 00:00:00 +0100"
     } ,
   
     {
@@ -14,6 +14,14 @@
       "tags"     : "idea, project",
       "url"      : "/blog/seguimiento-de-habitos",
       "date"     : "2025-01-19 00:00:00 +0100"
+    } ,
+  
+    {
+      "title"    : "Organizador de cables 10cm y 20cm V2",
+      "category" : "",
+      "tags"     : "3D, models, Organizer",
+      "url"      : "/blog/Cable-Organizer-V2",
+      "date"     : "2024-05-06 00:00:00 +0200"
     } ,
   
     {
@@ -30,6 +38,14 @@
       "tags"     : "idea, project",
       "url"      : "/blog/maquina-de-chuches",
       "date"     : "2024-03-20 00:00:00 +0100"
+    } ,
+  
+    {
+      "title"    : "Organizador de cables 10cm y 20cm",
+      "category" : "",
+      "tags"     : "3D, models, Organizer",
+      "url"      : "/blog/Cable-Organizer",
+      "date"     : "2022-10-20 00:00:00 +0200"
     } ,
   
     {
@@ -61,22 +77,6 @@
       "category" : "",
       "tags"     : "C, Javascript, HTML5, CSS3, MQTT, ESP32",
       "url"      : "/blog/Trabajo-Fin-de-Grado",
-      "date"     : "2021-03-28 00:00:00 +0100"
-    } ,
-  
-    {
-      "title"    : "Organizador de cables 10cm y 20cm",
-      "category" : "",
-      "tags"     : "3D, models, Organizer",
-      "url"      : "/blog/Cable-Organizer",
-      "date"     : "2021-03-28 00:00:00 +0100"
-    } ,
-  
-    {
-      "title"    : "Organizador de cables 10cm y 20cm V2",
-      "category" : "",
-      "tags"     : "3D, models, Organizer",
-      "url"      : "/blog/Cable-Organizer-V2",
       "date"     : "2021-03-28 00:00:00 +0100"
     } 
   
