@@ -17,6 +17,22 @@
     } ,
   
     {
+      "title"    : "Saco de dormir calefactado",
+      "category" : "",
+      "tags"     : "idea, project",
+      "url"      : "/blog/saco-de-dormir-calefactado",
+      "date"     : "2025-01-07 00:00:00 +0100"
+    } ,
+  
+    {
+      "title"    : "Terrario eterno",
+      "category" : "",
+      "tags"     : "idea, project",
+      "url"      : "/blog/terrario-eterno",
+      "date"     : "2024-05-24 00:00:00 +0200"
+    } ,
+  
+    {
       "title"    : "Organizador de cables 10cm y 20cm V2",
       "category" : "",
       "tags"     : "3D, models, Organizer",
@@ -38,6 +54,14 @@
       "tags"     : "idea, project",
       "url"      : "/blog/maquina-de-chuches",
       "date"     : "2024-03-20 00:00:00 +0100"
+    } ,
+  
+    {
+      "title"    : "Soporte vertical para patinetes",
+      "category" : "",
+      "tags"     : "idea, project",
+      "url"      : "/blog/soporte-vertical-patinete",
+      "date"     : "2023-12-10 00:00:00 +0100"
     } ,
   
     {
