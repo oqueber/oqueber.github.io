@@ -1,0 +1,71 @@
+{%- assign lang = page.lang | default: 'es' -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- if lang == 'en' -%}{%- assign other = 'es' -%}{%- else -%}{%- assign other = 'en' -%}{%- endif -%}
+{%- assign alt = site.data.i18n[other].root | append: '/lab/' -%}
+{%- if page.alt -%}{%- assign alt = page.alt -%}{%- endif -%}
+{%- if page.collection == 'lab' -%}
+  {%- comment -%} Article ↔ its translation (index.md ↔ index.en.md) {%- endcomment -%}
+  {%- if page.path contains '/index.en.md' -%}
+    {%- assign b_orig = page.path | replace: '/index.en.md', '/index.md' -%}
+    {%- assign b_alt = site.lab | where_exp: 'x', 'x.path == b_orig' | first -%}
+  {%- else -%}
+    {%- assign b_tr = page.path | replace: '/index.md', '/index.en.md' -%}
+    {%- assign b_alt = site.lab | where_exp: 'x', 'x.path == b_tr' | first -%}
+  {%- endif -%}
+  {%- if b_alt -%}{%- assign alt = b_alt.url | remove: 'index.html' -%}{%- endif -%}
+{%- endif -%}
+{%- assign title = page.title | default: site.title -%}
+{%- if page.title and page.title != site.title -%}{%- assign title = page.title | append: ' · ' | append: site.title -%}{%- endif -%}
+{%- assign description = page.summary | default: page.description | default: site.description | strip_html | strip_newlines | truncate: 160 -%}
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title | escape }}</title>
+  <meta name="description" content="{{ description | escape }}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ title | escape }}">
+  <meta property="og:description" content="{{ description | escape }}">
+  {%- if page.collection == 'lab' %}
+  <meta property="og:image" content="{{ site.url }}{{ page.url | split: '/' | pop | join: '/' }}/{{ page.cover }}">
+  {%- else %}
+  <meta property="og:image" content="{{ site.url }}/content/cv/photo.jpg">
+  {%- endif %}
+  <link rel="canonical" href="{{ site.url }}{{ page.url | remove: 'index.html' }}">
+  <link rel="alternate" hreflang="{{ other }}" href="{{ site.url }}{{ alt }}">
+  <meta name="theme-color" content="#0E3A62">
+  <link rel="icon" href="{{ '/assets/favicon.ico' | relative_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Caveat:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <a class="skip" href="#main">{{ t.skip }}</a>
+  <header class="site-header wrap">
+    <a class="brand" href="{{ t.root }}/">oqueber<span class="accent">.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="{{ t.root }}/" {% if page.nav == 'cv' %}aria-current="page"{% endif %}><span class="mono">01 ·</span> {{ t.nav_cv }}</a>
+      <a href="{{ t.root }}/lab/" {% if page.nav == 'lab' or page.collection == 'lab' %}aria-current="page"{% endif %}><span class="mono">02 ·</span> {{ t.nav_lab }}</a>
+      <a href="{{ t.root }}/brainstorm/" {% if page.nav == 'brainstorm' %}aria-current="page"{% endif %}><span class="mono">03 ·</span> {{ t.nav_brainstorm }}</a>
+      <a class="lang-switch" href="{{ alt }}" hreflang="{{ other }}" lang="{{ other }}" title="{{ t.switch_label }}">{{ t.switch_short }}</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer wrap">
+    <span class="mono">{{ t.footer }} · {{ site.time | date: '%Y' }}</span>
+    <span class="social">
+      <a href="https://github.com/{{ site.author.github }}">GitHub</a>
+      <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}">LinkedIn</a>
+      <a href="https://www.thingiverse.com/{{ site.author.thingiverse }}">Thingiverse</a>
+    </span>
+  </footer>
+  <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+</body>
+</html>

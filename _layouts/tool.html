@@ -1,0 +1,77 @@
+---
+layout: base
+nav: brainstorm
+---
+{%- comment -%}
+  Tool wiki page: content/_tools/<slug>/index.md (+ photo.jpg and any files).
+  "Usado en" is automatic: every Lab article whose `tools:` mentions this tool.
+{%- endcomment -%}
+{%- assign lang = page.lang | default: 'es' -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign dir = page.url | remove: 'index.html' -%}
+{%- assign my_slug = page.url | remove: '/brainstorm/tools/' | remove: '/index.html' -%}
+{%- assign tools_col = site.collections | where: 'label', 'tools' | first -%}
+{%- assign img_src = page.path | remove: 'index.md' | append: page.image -%}
+{%- assign has_img = tools_col.files | where_exp: 'f', 'f.path contains img_src' | size -%}
+{%- assign used = '' | split: '' -%}
+{%- include lab-docs.html -%}
+{%- for doc in ideas -%}
+  {%- for x in doc.tools -%}
+    {%- assign n = x.tool | default: x.name | default: x | slugify: 'latin' -%}
+    {%- if n == my_slug -%}{%- assign used = used | push: doc -%}{%- break -%}{%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}
+{%- assign issue_url = 'https://github.com/' | append: site.repository | append: '/issues/new?title=' -%}
+{%- capture issue_title -%}{{ t.tool_fix_btn }}: {{ page.title }}{%- endcapture -%}
+
+<article class="tool-page">
+  <header class="wrap article-head">
+    <a class="mono back" href="{{ t.root }}/brainstorm/#tools">{{ t.back_brainstorm }}</a>
+    <p class="mono accent">{{ t.tool_kicker }}</p>
+    <h1 class="h1">{{ page.title }}</h1>
+    {%- if page.summary %}<p class="lead measure">{{ page.summary }}</p>{% endif %}
+  </header>
+
+  <section class="wrap tool-sheet">
+    {%- if page.image and has_img > 0 %}
+    <figure class="tool-photo">
+      <a href="{{ dir }}{{ page.image }}"><img src="{{ dir }}{{ page.image }}" alt="{{ page.title }}" width="800" height="600"></a>
+    </figure>
+    {%- endif %}
+    <div class="tool-facts">
+      {%- if page.specs %}
+      <h2 class="mono dim panel-label">{{ t.specs }}</h2>
+      <dl class="specs">
+        {%- for s in page.specs %}
+        <div><dt class="mono dim">{{ s[0] }}</dt><dd>{{ s[1] }}</dd></div>
+        {%- endfor %}
+      </dl>
+      {%- endif %}
+      {%- if page.links %}
+      <p class="actions">{% for l in page.links %}<a class="btn" href="{{ l.url }}">{{ l.label }} ↗</a>{% endfor %}</p>
+      {%- endif %}
+    </div>
+  </section>
+
+  {%- assign body = content | strip -%}
+  {%- if body != '' %}
+  <section class="wrap section">
+    <div class="prose">{{ body }}</div>
+  </section>
+  {%- endif %}
+
+  <section class="wrap section" aria-labelledby="used-in">
+    <h2 id="used-in" class="h2 h2-sm">{{ t.used_in }} <span class="mono dim count-inline">{{ used.size }}</span></h2>
+    {%- if used.size > 0 %}
+    <ul class="cards" role="list">
+      {%- for doc in used %}{% include lab-card.html doc=doc %}{% endfor %}
+    </ul>
+    {%- else %}
+    <p class="dim">{{ t.not_used }}</p>
+    {%- endif %}
+    <p class="tool-fix">
+      <span class="hand accent">{{ t.tool_fix }}</span>
+      <a class="btn" href="{{ issue_url }}{{ issue_title | url_encode }}&body={{ site.url | append: dir | url_encode }}">{{ t.tool_fix_btn }}</a>
+    </p>
+  </section>
+</article>

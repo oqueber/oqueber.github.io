@@ -1,0 +1,23 @@
+{%- assign doc = include.doc -%}
+{%- assign lc_href = doc.url | remove: 'index.html' -%}
+{%- assign lc_title = doc.title -%}
+{%- assign lc_lang = doc.lang | default: 'es' -%}
+{%- if lang == 'en' and lc_lang != 'en' -%}
+  {%- include doc-translation.html doc=doc -%}
+  {%- if tr -%}{%- assign lc_href = tr.url -%}{%- assign lc_title = tr.title -%}{%- assign lc_lang = 'en' -%}{%- endif -%}
+{%- endif -%}
+{%- include doc-updated.html doc=doc -%}
+{%- assign lc_date = doc.date | date: '%Y-%m-%d' -%}
+{%- assign sk = 'status_' | append: doc.status -%}
+<li class="card{% if doc.draft %} is-draft{% endif %}" data-status="{{ doc.status }}">
+  <a href="{{ lc_href }}">
+    {% include cover.html doc=doc class="card-img" alt="" %}
+    <span class="card-meta">
+      {%- if doc.draft %}<span class="chip chip-draft">{{ t.draft }}</span>{% endif %}
+      <span class="chip chip-{{ doc.status }}">{{ t[sk] }}</span>
+      <span class="mono dim">{{ doc.date | date: '%Y·%m·%d' }}{% if lc_lang != lang %} · {{ lc_lang | upcase }}{% endif %}</span>
+      {%- if upd > lc_date %}<span class="mono accent" title="{{ t.updated }}">↻ {{ upd | date: '%Y·%m·%d' }}</span>{% endif %}
+    </span>
+    <span class="card-title">{{ lc_title }}</span>
+  </a>
+</li>

@@ -1,0 +1,17 @@
+{%- comment -%}
+  Sets `upd` (YYYY-MM-DD): the newest date in the article's log, or its date.
+  The log is a list under <!-- log --> where each line starts with a date:
+    - 2025-02-03 Probé la pantalla, demasiado lenta.
+  Works on raw markdown and on rendered HTML. Param: doc
+{%- endcomment -%}
+{%- assign upd = include.doc.date | date: '%Y-%m-%d' -%}
+{%- if include.doc.content contains '<!-- log -->' -%}
+  {%- assign u_lines = include.doc.content | split: '<!-- log -->' | last | split: '<!-- ' | first | newline_to_br | split: '<br />' -%}
+  {%- for u_line in u_lines -%}
+    {%- assign u_txt = u_line | strip | remove_first: '<li>' | remove_first: '- ' | remove_first: '* ' | strip -%}
+    {%- assign u_d = u_txt | slice: 0, 10 -%}
+    {%- assign u_d4 = u_d | slice: 4, 1 -%}
+    {%- assign u_d7 = u_d | slice: 7, 1 -%}
+    {%- if u_d.size == 10 and u_d4 == '-' and u_d7 == '-' and u_d > upd -%}{%- assign upd = u_d -%}{%- endif -%}
+  {%- endfor -%}
+{%- endif -%}

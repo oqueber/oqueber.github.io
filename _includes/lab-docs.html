@@ -1,0 +1,11 @@
+{%- comment -%}
+  Sets `ideas`: every Lab article, newest first, without English translations
+  (index.en.md) and — on the live site only — without drafts (draft: true).
+{%- endcomment -%}
+{%- assign ideas = '' | split: '' -%}
+{%- for d in site.lab -%}
+  {%- if d.path contains '/index.en.md' -%}{%- continue -%}{%- endif -%}
+  {%- if d.draft and jekyll.environment == 'production' -%}{%- continue -%}{%- endif -%}
+  {%- assign ideas = ideas | push: d -%}
+{%- endfor -%}
+{%- assign ideas = ideas | sort: 'date' | reverse -%}

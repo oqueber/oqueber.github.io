@@ -1,0 +1,34 @@
+---
+layout: base
+nav: lab
+---
+{%- assign lang = page.lang | default: 'es' -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- include lab-docs.html -%}
+{%- assign n_idea = ideas | where: 'status', 'idea' | size -%}
+{%- assign n_working = ideas | where: 'status', 'working' | size -%}
+{%- assign n_done = ideas | where: 'status', 'done' | size -%}
+
+<section class="wrap page-head">
+  <p class="mono accent">{{ t.lab_kicker }}</p>
+  <h1 class="h1">{{ t.lab_title }}</h1>
+  <p class="body dim measure">{{ t.lab_intro }}</p>
+</section>
+
+<section class="wrap">
+  <div class="filters" role="group" aria-label="{{ t.filter_label }}" data-filters hidden>
+    <button type="button" data-filter="all" aria-pressed="true">{{ t.filter_all }} <span class="count">{{ ideas | size }}</span></button>
+    <button type="button" data-filter="idea" aria-pressed="false"><span class="dot dot-idea"></span>{{ t.status_idea }} <span class="count">{{ n_idea }}</span></button>
+    <button type="button" data-filter="working" aria-pressed="false"><span class="dot dot-working"></span>{{ t.status_working }} <span class="count">{{ n_working }}</span></button>
+    <button type="button" data-filter="done" aria-pressed="false"><span class="dot dot-done"></span>{{ t.status_done }} <span class="count">{{ n_done }}</span></button>
+  </div>
+  <p class="status-line hand accent" data-status-line aria-live="polite"
+     data-idea="{{ t.status_idea_long }}" data-working="{{ t.status_working_long }}" data-done="{{ t.status_done_long }}"></p>
+
+  <ul class="cards" role="list" data-cards>
+    {%- for doc in ideas %}
+      {%- include lab-card.html doc=doc %}
+    {%- endfor %}
+  </ul>
+  <p class="dim" data-empty hidden>{{ t.empty }}</p>
+</section>

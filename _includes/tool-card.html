@@ -1,0 +1,26 @@
+{%- comment -%} One tool in the Brainstorm › Herramientas grid. Param: doc {%- endcomment -%}
+{%- assign tc = include.doc -%}
+{%- assign tc_dir = tc.url | remove: 'index.html' -%}
+{%- assign tc_slug = tc.url | remove: '/brainstorm/tools/' | remove: '/index.html' -%}
+{%- assign tc_src = tc.path | remove: 'index.md' | append: tc.image -%}
+{%- assign tc_col = site.collections | where: 'label', 'tools' | first -%}
+{%- assign tc_has = tc_col.files | where_exp: 'f', 'f.path contains tc_src' | size -%}
+{%- assign tc_uses = 0 -%}
+{%- include lab-docs.html -%}
+{%- for doc in ideas -%}
+  {%- for x in doc.tools -%}
+    {%- assign n = x.tool | default: x.name | default: x | slugify: 'latin' -%}
+    {%- if n == tc_slug -%}{%- assign tc_uses = tc_uses | plus: 1 -%}{%- break -%}{%- endif -%}
+  {%- endfor -%}
+{%- endfor %}
+<li class="tool-card">
+  <a href="{{ tc_dir }}">
+    <span class="tool-card-img">
+      {%- if tc.image and tc_has > 0 %}<img src="{{ tc_dir }}{{ tc.image }}" alt="" loading="lazy" width="400" height="300">
+      {%- else %}<span class="hand">{{ tc.title | slice: 0 }}</span>{% endif -%}
+    </span>
+    <span class="tool-card-name">{{ tc.title }}</span>
+    {%- if tc.summary %}<span class="dim tool-card-sum">{{ tc.summary }}</span>{% endif %}
+    <span class="mono accent">{{ tc_uses }} {% if tc_uses == 1 %}{{ t.use_1 }}{% else %}{{ t.uses }}{% endif %} →</span>
+  </a>
+</li>

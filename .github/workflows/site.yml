@@ -1,0 +1,76 @@
+# Builds and publishes oqueber.com on every push to main.
+#  1. Shrinks any photo larger than 2000 px and commits it back (scripts/optimize-images.py)
+#  2. Leaves drafts (draft: true) out of the published site (scripts/remove-drafts.py)
+#  3. Builds with the same Jekyll as GitHub Pages — if anything is broken the run fails
+#     and GitHub emails you the file and line, and the live site stays as it was.
+#
+# One-time setup: repo Settings → Pages → Build and deployment → Source: "GitHub Actions".
+name: Build & publish
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write   # commit optimised images
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Optimise images
+        run: |
+          pip install --quiet pillow
+          python scripts/optimize-images.py
+
+      - name: Commit optimised images
+        if: github.event_name == 'push'
+        run: |
+          if [ -n "$(git status --porcelain -- content)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add content
+            git commit -m "Optimise images [skip ci]"
+            git push
+          fi
+
+      - name: Leave drafts out
+        run: python scripts/remove-drafts.py
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - name: Build
+        run: bundle exec jekyll build --trace
+        env:
+          JEKYLL_ENV: production
+
+      - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request'
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

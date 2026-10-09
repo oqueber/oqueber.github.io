@@ -1,0 +1,48 @@
+{%- comment -%}
+  Renders an article's `tools:` list. Each item can be:
+    - Parches calefactables USB 5 V      → plain name; if a wiki page with that name exists
+                                           (content/_tools/parches-calefactables-usb-5-v/),
+                                           it links there and shows its photo automatically
+    - name: Powerbank 10.000 mAh         → your own picture and/or link
+      img: powerbank.jpg                   (file in the article folder, or a full https:// URL)
+      url: https://…
+      note: 2 A output                     (optional; plain text or { es: …, en: … })
+    - tool: parches-calefactables-usb-5-v → force a wiki page by its folder name
+  Params: tools, base (the article's folder URL, for local images)
+{%- endcomment -%}
+<ul class="tools" role="list">
+{%- for x in include.tools -%}
+  {%- assign tl_name = x.name | default: x.tool | default: x -%}
+  {%- assign tl_slug = x.tool | default: tl_name | slugify: 'latin' -%}
+  {%- assign tl_key = '/brainstorm/tools/' | append: tl_slug | append: '/index.html' -%}
+  {%- assign tl_doc = site.tools | where: 'url', tl_key | first -%}
+  {%- assign tl_url = x.url -%}
+  {%- assign tl_img = nil -%}
+  {%- assign tl_note = x.note[lang] | default: x.note -%}
+  {%- if tl_doc -%}
+    {%- assign tl_url = tl_doc.url | remove: 'index.html' -%}
+    {%- unless x.name -%}{%- assign tl_name = tl_doc.title -%}{%- endunless -%}
+    {%- assign tl_src = tl_doc.path | remove: 'index.md' | append: tl_doc.image -%}
+    {%- assign tl_found = site.collections | where: 'label', 'tools' | first -%}
+    {%- assign tl_found = tl_found.files | where_exp: 'f', 'f.path contains tl_src' | size -%}
+    {%- if tl_doc.image and tl_found > 0 -%}{%- assign tl_img = tl_url | append: tl_doc.image -%}{%- endif -%}
+  {%- endif -%}
+  {%- if x.img -%}
+    {%- if x.img contains '://' or x.img contains '/' -%}{%- assign tl_img = x.img -%}{%- else -%}{%- assign tl_img = include.base | append: x.img -%}{%- endif -%}
+  {%- endif %}
+  <li class="tool{% if tl_doc %} tool-wiki{% endif %}">
+    {% if tl_url %}<a href="{{ tl_url }}">{% else %}<span class="tool-row">{% endif %}
+      <span class="tool-thumb">
+        {%- if tl_img %}<img src="{{ tl_img }}" alt="" loading="lazy" width="64" height="64">
+        {%- else %}<span class="hand">{{ tl_name | slice: 0 }}</span>{% endif -%}
+      </span>
+      <span class="tool-text">
+        <span class="tool-name">{{ tl_name }}</span>
+        {%- if tl_note %}<span class="tool-note dim">{{ tl_note }}</span>{% endif %}
+      </span>
+      {%- if tl_doc %}<span class="mono tool-kind accent">{{ t.tool_wiki }} →</span>
+      {%- elsif tl_url %}<span class="mono tool-kind dim">↗</span>{% endif %}
+    {% if tl_url %}</a>{% else %}</span>{% endif %}
+  </li>
+{%- endfor %}
+</ul>
