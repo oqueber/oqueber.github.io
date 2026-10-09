@@ -1,0 +1,50 @@
+---
+layout: base
+nav: brainstorm
+---
+{%- comment -%} All links live in content/brainstorm/index.md {%- endcomment -%}
+{%- assign lang = page.lang | default: 'es' -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign bs = site.pages | where: "section", "brainstorm" | first -%}
+
+<section class="wrap page-head">
+  <p class="mono accent">{{ t.bs_kicker }}</p>
+  <h1 class="h1">{{ t.bs_title }}</h1>
+  <p class="body dim measure">{{ t.bs_intro }}</p>
+</section>
+
+<section class="wrap">
+  <div class="boxes">
+    {%- for g in bs.groups %}
+    <section class="box" aria-labelledby="g-{{ forloop.index }}">
+      <h2 id="g-{{ forloop.index }}" class="hand accent box-title">{{ g.name[lang] | default: g.name }}</h2>
+      <ul role="list">
+        {%- for i in g.items %}
+        <li>
+          {%- if i.url %}<a href="{{ i.url }}">{{ i.label }} ↗</a>{% else %}<span>{{ i.label }}</span>{% endif %}
+          {%- assign note = i.note[lang] | default: i.note -%}
+          {%- if note %}<span class="dim note">{{ note }}</span>{% endif %}
+        </li>
+        {%- endfor %}
+      </ul>
+    </section>
+    {%- endfor %}
+  </div>
+  {%- if bs.content != '' %}<div class="prose measure section">{{ bs.content }}</div>{% endif %}
+</section>
+
+{%- assign tools = site.tools | default: empty | sort: 'title' %}
+{%- if tools.size > 0 %}
+<section class="wrap section" id="tools" aria-labelledby="tools-title">
+  <div class="section-head">
+    <div>
+      <p class="mono accent">WIKI</p>
+      <h2 id="tools-title" class="h2">{{ t.tools_title }}</h2>
+    </div>
+    <p class="body dim measure">{{ t.tools_intro }}</p>
+  </div>
+  <ul class="tool-cards" role="list">
+    {%- for doc in tools %}{% include tool-card.html doc=doc %}{% endfor %}
+  </ul>
+</section>
+{%- endif %}

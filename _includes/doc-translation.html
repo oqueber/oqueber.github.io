@@ -1,0 +1,6 @@
+{%- comment -%} Sets `tr`: the English translation (index.en.md next to index.md) of a Lab doc, or nil. Param: doc {%- endcomment -%}
+{%- assign tr = nil -%}
+{%- unless include.doc.path contains '/index.en.md' -%}
+  {%- assign tr_path = include.doc.path | replace: '/index.md', '/index.en.md' -%}
+  {%- assign tr = site.lab | where_exp: 'x', 'x.path == tr_path' | first -%}
+{%- endunless -%}

@@ -1,87 +1,69 @@
-### Site Settings ###
-title               : Oqueber Navarro
-description         : Hola soy Oqueber Navarro, ingeniero electronico especializado en el area IoT. Me encanta la tecnología, la innovación y los retos de ingeniería. 
-baseurl             : ""                     # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
-open_new_tab        : True                             # Opens external URLs in new tab (works for posts, projects and navbar only)
+#  oqueber.com — site settings
+#  You rarely need to touch this file. Content lives in /content:
+#    content/cv/index.md          → CV (Spanish + English)
+#    content/_lab/YYYY/MM/DD/slug → Lab articles + their photos, audio, code
+#    content/brainstorm/index.md  → links & personal stuff
+#    content/_tools/<slug>        → tool wiki (one page per tool, linked from articles)
 
+title       : Oqueber Navarro
+description : Ingeniero electrónico e inventor en Madrid. Convierto ideas en aparatos que funcionan.
+url         : "https://oqueber.com"
+baseurl     : ""
+lang        : es
 
-### Plugins ###
-plugins:
-  - jemoji
-
-
-### Navbar Settings ###
-nav_exclude:                                            # The following paths are excluded from navbar
-  - pages/tags.html
-  - pages/404.html
-  - pages/index.md
-
-### Author Info ###
 author:
-  name              : Oqueber Navarro
-  image             : '/img/foto_perfil.jpg'
-  #email             : oqueber_2324@hotmail.com
-  github            : oqueber
-# gitlab            : your_username
-# instagram         : your_username
-  linkedin          : oqueber-daizar-navarro-perez-712388141
-  thingiverse       : oqueber
-#  medium            : your_username
-# stackoverflow     : your_user_id
-# twitch            : your_username
-#  twitter           : your_username
-# vimeo             : your_username
-# youtube           : your_channel_name
+  name     : Oqueber Navarro
+  github   : oqueber
+  linkedin : oqueber-daizar-navarro-perez-712388141
+  thingiverse : oqueber
 
+# Repo used for the "your turn" buttons in each article (opens a GitHub issue).
+repository: oqueber/oqueber.github.io
 
-### Posts ###
-permalink: /blog/:title
+# Optional comments under each article via giscus (GitHub Discussions).
+# 1. Enable Discussions on the repo  2. install https://github.com/apps/giscus
+# 3. copy repo_id and category_id from https://giscus.app  4. set enabled: true
+giscus:
+  enabled     : false
+  repo_id     : ""
+  category    : "Lab"
+  category_id : ""
 
-### Collections ###
+collections_dir: content
 collections:
-  projects:
-    output: true
-    permalink: /projects/:name
+  lab:
+    output    : true
+    permalink : /lab/:path:output_ext
+  tools:                                   # wiki: content/_tools/<slug>/index.md
+    output    : true
+    permalink : /brainstorm/tools/:path:output_ext
 
-### Disqus ###
-disqus:
-  shortname: your-short-name-disqus                     # Your website Shortname on disqus
-
-### Analytics ###
-analytics:
-  enabled: false                                        # Set true to enable analytics
-  google:
-    tracking_id: your-google-tracking-id
-
-
-### Buy me a coffee ###
-# See https://www.buymeacoffee.com/
-buymeacoffee:
-  enabled: false
-  username: your_username
-  color: "#007bff"
-  message: "Thank you for visiting."                    # Message to be displayed aside from the button for a few seconds.
-  description: "Support me on Buy me a coffee!"
-
-
-### Defaults for collections ###
 defaults:
-  - scope:
-      path: ""
-      type: "projects"
+  - scope: { path: "" }
+    values: { lang: es }
+  - scope: { path: "", type: lab }
     values:
-      layout: "page"
-  - scope:
-      path: ""
-      type: "posts"
+      layout : article
+      status : idea
+      cover  : poster.jpg
+  - scope: { path: "", type: tools }
     values:
-      comments: false                                   # Set to true to enable disqus comments
+      layout : tool
+      image  : photo.jpg
+      alt    : /en/brainstorm/
 
+plugins:
+  - jekyll-redirect-from
+  - jekyll-sitemap
 
-### Exclude from processing ###
+# Stop the build on broken front matter (e.g. a stray ":" in a title) instead of skipping the page.
+strict_front_matter: true
+
 exclude:
   - README.md
-  - readme.txt
-  - CONTRIBUTING.md
-  - LICENSE
+  - scripts/
+  - new-idea.ps1
+  - new-tool.ps1
+  - Gemfile
+  - Gemfile.lock
   - "*.log"

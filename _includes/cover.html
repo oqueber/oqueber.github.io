@@ -1,0 +1,14 @@
+{%- comment -%}
+  Cover image of a lab doc, or a hand-drawn placeholder if poster.jpg is missing.
+  Params: doc, class
+{%- endcomment -%}
+{%- assign c_doc = include.doc -%}
+{%- assign c_dir = c_doc.url | remove: 'index.html' -%}
+{%- assign c_src = c_doc.path | remove: 'index.md' | append: c_doc.cover -%}
+{%- assign c_lab = site.collections | where: 'label', 'lab' | first -%}
+{%- assign c_found = c_lab.files | where_exp: 'f', 'f.path contains c_src' | size -%}
+{%- if c_doc.cover and c_found > 0 -%}
+<img class="{{ include.class }}" src="{{ c_dir }}{{ c_doc.cover }}" alt="{{ include.alt }}" loading="lazy" width="1600" height="900">
+{%- else -%}
+<span class="{{ include.class }} placeholder" aria-hidden="true"><span class="hand">{{ c_doc.title }}</span></span>
+{%- endif -%}

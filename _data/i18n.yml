@@ -1,0 +1,156 @@
+# Interface text in both languages. Content text lives in /content.
+es:
+  root: ""
+  nav_cv: CV
+  nav_lab: Lab
+  nav_brainstorm: Brainstorm
+  switch_label: English
+  switch_short: EN
+  skip: Saltar al contenido
+  # CV
+  see_inventions: Ver mis inventos
+  download_cv: Descargar CV
+  photo_note: "↑ yo, en el taller"
+  years: años
+  years_label: creando tecnología, desde
+  companies_label: empresas
+  inventions_label: ideas e inventos documentados
+  path_title: Mi camino
+  version_label: Versión del CV
+  short_version: versión corta
+  long_version: versión larga
+  education_title: Formación
+  latest_lab: Lo último del Lab
+  all_lab: Ver todo el Lab →
+  # Lab
+  lab_kicker: 02 · LAB
+  lab_title: Aprendo construyendo.
+  lab_intro: Ideas, prototipos y algún que otro fracaso. Todo está abierto — si algo te inspira, comenta, propón o constrúyelo tú.
+  filter_label: Filtrar por estado
+  filter_all: Todo
+  status_idea: Idea
+  status_working: En marcha
+  status_done: Hecho
+  status_idea_long: Es una idea. Aún se puede cambiar todo.
+  status_working_long: Estoy construyéndolo. Tus sugerencias llegan a tiempo.
+  status_done_long: Terminado. Pero toda versión 1 tiene una versión 2.
+  empty: Nada por aquí todavía.
+  # Article
+  back_lab: ← Lab
+  draft: Borrador
+  updated: actualizado
+  log_title: Bitácora
+  tab_result: Resultado
+  tab_brief: Brief
+  tab_process: Proceso
+  tab_tools: Herramientas
+  tabs_label: Secciones del artículo
+  no_result: Todavía no hay resultado. Esta idea está en marcha — y aún puedes influir en cómo acaba.
+  no_brief: Brief pendiente — el póster de arriba cuenta la idea.
+  no_process: Aún no hay proceso documentado.
+  open_question: Pregunta abierta
+  tools_used: Lo que he usado
+  files: Archivos
+  your_turn: Tu turno
+  your_turn_text: Este proyecto no está cerrado. Si tienes una idea, una mejora o lo has construido tú, cuéntamelo — lo que propongas puede acabar en la siguiente versión.
+  suggest: Proponer una mejora
+  built_it: Lo he construido
+  ask_answer: Responder a la pregunta
+  more_ideas: Más del Lab
+  read_in: Escrito en
+  # Brainstorm
+  bs_kicker: 03 · BRAINSTORM
+  bs_title: Mi cajón de sastre.
+  bs_intro: Enlaces, herramientas y cosas que me gustan. Lo tengo aquí para encontrarlo desde cualquier sitio — y compartirlo.
+  # Tool wiki
+  tools_title: Herramientas
+  tools_intro: Las piezas, placas y herramientas que uso en mis proyectos — cada una con su ficha y los proyectos donde aparece.
+  tool_kicker: WIKI · HERRAMIENTA
+  tool_wiki: ficha
+  back_brainstorm: ← Brainstorm
+  specs: Datos
+  used_in: Usado en
+  not_used: Aún no aparece en ningún proyecto.
+  uses: proyectos
+  use_1: proyecto
+  tool_fix: ¿Algo que corregir o añadir?
+  tool_fix_btn: Proponer un cambio
+  # Footer
+  footer: Hecho a mano en Madrid
+  not_found: Esta página no existe… todavía.
+  go_home: Volver al inicio
+
+en:
+  root: /en
+  nav_cv: CV
+  nav_lab: Lab
+  nav_brainstorm: Brainstorm
+  switch_label: Español
+  switch_short: ES
+  skip: Skip to content
+  see_inventions: See my inventions
+  download_cv: Download CV
+  photo_note: "↑ me, in the workshop"
+  years: years
+  years_label: building technology, since
+  companies_label: companies
+  inventions_label: documented ideas & inventions
+  path_title: My path
+  version_label: CV version
+  short_version: short version
+  long_version: long version
+  education_title: Education
+  latest_lab: Latest from the Lab
+  all_lab: See the whole Lab →
+  lab_kicker: 02 · LAB
+  lab_title: I learn by building.
+  lab_intro: Ideas, prototypes and the odd failure. Everything is open — if something sparks an idea, comment, suggest or build it yourself.
+  filter_label: Filter by status
+  filter_all: All
+  status_idea: Idea
+  status_working: Working on it
+  status_done: Done
+  status_idea_long: Just an idea. Everything can still change.
+  status_working_long: I'm building it. Your suggestions arrive just in time.
+  status_done_long: Finished. But every version 1 has a version 2.
+  empty: Nothing here yet.
+  back_lab: ← Lab
+  draft: Draft
+  updated: updated
+  log_title: Log
+  tab_result: Result
+  tab_brief: Brief
+  tab_process: Process
+  tab_tools: Tools
+  tabs_label: Article sections
+  no_result: No result yet. This idea is still moving — and you can still shape how it ends.
+  no_brief: Brief pending — the poster above tells the idea.
+  no_process: No process documented yet.
+  open_question: Open question
+  tools_used: What I used
+  files: Files
+  your_turn: Your turn
+  your_turn_text: This project isn't closed. If you have an idea, an improvement, or you built it yourself, tell me — what you suggest may end up in the next version.
+  suggest: Suggest an improvement
+  built_it: I built it
+  ask_answer: Answer the question
+  more_ideas: More from the Lab
+  read_in: Written in
+  bs_kicker: 03 · BRAINSTORM
+  bs_title: My junk drawer.
+  bs_intro: Links, tools and things I like. Kept here so I can find them from anywhere — and share them.
+  tools_title: Tools
+  tools_intro: The parts, boards and tools I use in my projects — each with its own page and the projects it shows up in.
+  tool_kicker: WIKI · TOOL
+  tool_wiki: wiki
+  back_brainstorm: ← Brainstorm
+  specs: Specs
+  used_in: Used in
+  not_used: Not used in any project yet.
+  uses: projects
+  use_1: project
+  tool_fix: Something to fix or add?
+  tool_fix_btn: Suggest a change
+  footer: Handmade in Madrid
+  not_found: This page doesn't exist… yet.
+  go_home: Back home

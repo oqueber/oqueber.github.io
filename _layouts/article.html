@@ -1,0 +1,222 @@
+---
+layout: base
+---
+{%- comment -%}
+  Lab article. The markdown body is split into tabs with these markers:
+    <!-- result -->  <!-- brief -->  <!-- process -->  <!-- tools -->
+  plus an optional dated log, shown at the top of "Process":
+    <!-- log -->
+    - 2025-02-03 Probé la pantalla, demasiado lenta.
+  Media is picked up automatically from the article's folders:
+    photos/ → gallery in "Process"   audio/ → players in "Process"
+    code/   → downloads in "Tools"
+  An English translation lives next to it as index.en.md (lang: en) and only needs
+  title, summary and body — status, date, cover, tools and links come from index.md.
+{%- endcomment -%}
+{%- assign lang = page.lang | default: 'es' -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign src = page -%}
+{%- if page.path contains '/index.en.md' -%}
+  {%- assign orig_path = page.path | replace: '/index.en.md', '/index.md' -%}
+  {%- assign orig = site.lab | where_exp: 'x', 'x.path == orig_path' | first -%}
+  {%- if orig -%}{%- assign src = orig -%}{%- endif -%}
+{%- endif -%}
+{%- assign status = src.status | default: 'idea' -%}
+{%- assign dir = page.url | split: '/' | pop | join: '/' | append: '/' -%}
+{%- assign src_dir = page.path | split: '/' | pop | join: '/' | append: '/' -%}
+{%- assign lab = site.collections | where: 'label', 'lab' | first -%}
+{%- assign mine = lab.files | where_exp: 'f', 'f.path contains src_dir' -%}
+{%- assign sk = 'status_' | append: status -%}
+{%- assign ask = page.ask | default: src.ask -%}
+{%- assign body = content | strip -%}
+{%- assign has_markers = false -%}
+{%- if body contains '<!-- result -->' or body contains '<!-- brief -->' or body contains '<!-- process -->' or body contains '<!-- tools -->' or body contains '<!-- log -->' -%}
+  {%- assign has_markers = true -%}
+{%- endif -%}
+{%- if status == 'done' -%}{%- assign first_tab = 'result' -%}{%- else -%}{%- assign first_tab = 'brief' -%}{%- endif -%}
+{%- assign keys = 'result,brief,process,tools' | split: ',' -%}
+{%- assign issue_base = 'https://github.com/' | append: site.repository | append: '/issues/new?title=' -%}
+{%- capture issue_body -%}{{ site.url }}{{ dir }}{%- endcapture -%}
+{%- assign issue_body = issue_body | url_encode | append: '%0A%0A' -%}
+
+{%- comment -%} Log entries, newest first {%- endcomment -%}
+{%- assign log = '' | split: '' -%}
+{%- if body contains '<!-- log -->' -%}
+  {%- assign log_items = body | split: '<!-- log -->' | last | split: '<!-- ' | first | split: '<li>' -%}
+  {%- for it in log_items offset: 1 -%}
+    {%- assign it = it | split: '</li>' | first | strip -%}
+    {%- assign d = it | slice: 0, 10 -%}
+    {%- assign d4 = d | slice: 4, 1 -%}
+    {%- if d.size == 10 and d4 == '-' -%}{%- assign log = log | push: it -%}{%- endif -%}
+  {%- endfor -%}
+  {%- assign log = log | sort | reverse -%}
+{%- endif -%}
+{%- assign src_date = src.date | date: '%Y-%m-%d' -%}
+{%- assign upd = src_date -%}
+{%- if log.size > 0 -%}{%- assign upd = log | first | slice: 0, 10 -%}{%- endif -%}
+
+<article class="article">
+  <header class="wrap article-head">
+    <a class="mono back" href="{{ t.root }}/lab/">{{ t.back_lab }}</a>
+    <p class="card-meta">
+      {%- if page.draft or src.draft %}<span class="chip chip-draft">{{ t.draft }}</span>{% endif %}
+      <span class="chip chip-{{ status }}">{{ t[sk] }}</span>
+      <time class="mono dim" datetime="{{ src_date }}">{{ src.date | date: '%Y·%m·%d' }}</time>
+      {%- if upd > src_date %}<span class="mono accent">↻ {{ t.updated }} <time datetime="{{ upd }}">{{ upd | date: '%Y·%m·%d' }}</time></span>{% endif %}
+    </p>
+    <h1 class="h1">{{ page.title }}</h1>
+    {%- assign summary = page.summary | default: src.summary -%}
+    {%- if summary %}<p class="lead measure">{{ summary }}</p>{% endif %}
+
+    <ol class="track" aria-label="{{ t.filter_label }}">
+      {%- assign reached = true -%}
+      {%- for s in site.data.statuses -%}
+        {%- assign k = 'status_' | append: s -%}
+        <li class="{% if reached %}on{% endif %}{% if s == status %} now{% endif %}" {% if s == status %}aria-current="step"{% endif %}>
+          <span class="track-dot"></span><span class="mono">{{ t[k] }}</span>
+        </li>
+        {%- if s == status -%}{%- assign reached = false -%}{%- endif -%}
+      {%- endfor -%}
+    </ol>
+    {%- assign lk = 'status_' | append: status | append: '_long' -%}
+    <p class="hand accent">{{ t[lk] }}</p>
+  </header>
+
+  {%- assign cover = src.cover -%}
+  {%- assign cover_src = src_dir | append: cover -%}
+  {%- assign has_cover = mine | where_exp: 'f', 'f.path contains cover_src' | size -%}
+  {%- if cover and has_cover > 0 %}
+  <figure class="wrap cover">
+    <a href="{{ dir }}{{ cover }}"><img src="{{ dir }}{{ cover }}" alt="{{ page.cover_alt | default: src.cover_alt | default: page.title }}" width="1600" height="900"></a>
+  </figure>
+  {%- endif %}
+
+  <div class="wrap article-body">
+    <div class="tabs" role="tablist" aria-label="{{ t.tabs_label }}" data-tabs data-default="{{ first_tab }}" hidden>
+      {%- for key in keys -%}
+        {%- assign tk = 'tab_' | append: key %}
+      <button type="button" role="tab" id="tab-{{ key }}" aria-controls="{{ key }}" aria-selected="false" tabindex="-1">{{ t[tk] }}</button>
+      {%- endfor %}
+    </div>
+
+    {%- for key in keys %}
+      {%- assign tk = 'tab_' | append: key -%}
+      {%- assign marker = '<!-- ' | append: key | append: ' -->' -%}
+      {%- assign sec = '' -%}
+      {%- if body contains marker -%}
+        {%- assign sec = body | split: marker | last | split: '<!-- ' | first | strip -%}
+      {%- elsif has_markers == false and key == 'brief' -%}
+        {%- assign sec = body -%}
+      {%- endif %}
+    <section class="panel prose" id="{{ key }}" role="tabpanel" aria-labelledby="tab-{{ key }}" tabindex="0">
+      <h2 class="panel-title mono accent">{{ t[tk] }}</h2>
+
+      {%- if key == 'result' %}
+        {%- if sec != '' %}{{ sec }}{% else %}<p class="hand accent big-note">{{ t.no_result }}</p>{% endif %}
+        {%- if src.links %}
+        <p class="actions">{% for l in src.links %}<a class="btn" href="{{ l.url }}">{{ l.label }} ↗</a>{% endfor %}</p>
+        {%- endif %}
+
+      {%- elsif key == 'brief' %}
+        {%- if sec != '' %}{{ sec }}{% else %}<p class="dim">{{ t.no_brief }}</p>{% endif %}
+
+      {%- elsif key == 'process' %}
+        {%- if log.size > 0 %}
+        <h3 class="mono dim">{{ t.log_title }}</h3>
+        <ol class="log" role="list">
+          {%- for e in log %}
+          {%- assign e_date = e | slice: 0, 10 %}
+          <li><time class="mono accent" datetime="{{ e_date }}">{{ e_date | date: '%Y·%m·%d' }}</time><span>{{ e | remove_first: e_date | strip }}</span></li>
+          {%- endfor %}
+        </ol>
+        {%- endif %}
+        {%- if ask %}
+        <aside class="ask">
+          <p class="mono accent">{{ t.open_question }}</p>
+          <p class="ask-q">{{ ask }}</p>
+          <a class="btn btn-solid" href="{{ issue_base }}{{ 'Re: ' | append: ask | url_encode }}&body={{ issue_body }}">{{ t.ask_answer }}</a>
+        </aside>
+        {%- endif %}
+        {%- assign photos = mine | where_exp: 'f', 'f.path contains "/photos/"' | sort: 'path' -%}
+        {%- assign audios = mine | where_exp: 'f', 'f.path contains "/audio/"' | sort: 'path' -%}
+        {%- if sec != '' %}{{ sec }}{% elsif photos.size == 0 and audios.size == 0 and log.size == 0 %}<p class="dim">{{ t.no_process }}</p>{% endif %}
+        {%- for a in audios %}
+        <figure class="audio"><figcaption class="mono dim">{{ a.basename }}</figcaption><audio controls preload="none" src="{{ dir }}audio/{{ a.name }}"></audio></figure>
+        {%- endfor %}
+        {%- if photos.size > 0 %}
+        <ol class="gallery" role="list">
+          {%- for p in photos %}
+            {%- assign ext = p.extname | downcase -%}
+          <li>
+            {%- if ext == '.mp4' or ext == '.webm' or ext == '.mov' %}
+            <video controls preload="metadata" src="{{ dir }}photos/{{ p.name }}"></video>
+            {%- else %}
+            <a href="{{ dir }}photos/{{ p.name }}"><img src="{{ dir }}photos/{{ p.name }}" alt="{{ page.title }} — {{ forloop.index }}" loading="lazy"></a>
+            {%- endif %}
+            <span class="mono dim">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+          </li>
+          {%- endfor %}
+        </ol>
+        {%- endif %}
+
+      {%- elsif key == 'tools' %}
+        {%- if src.tools.size > 0 %}
+        <h3 class="mono dim">{{ t.tools_used }}</h3>
+        {% include tool-list.html tools=src.tools base=dir %}
+        {%- endif %}
+        {{ sec }}
+        {%- assign code = mine | where_exp: 'f', 'f.path contains "/code/"' | sort: 'path' -%}
+        {%- if code.size > 0 %}
+        <h3 class="mono dim">{{ t.files }}</h3>
+        <ul class="files" role="list">
+          {%- for c in code %}
+          {%- assign rel = c.path | split: '/code/' | last %}
+          <li><a href="{{ dir }}code/{{ rel }}" download>{{ rel }}</a></li>
+          {%- endfor %}
+        </ul>
+        {%- endif %}
+      {%- endif %}
+    </section>
+    {%- endfor %}
+
+    <aside class="your-turn" aria-labelledby="your-turn">
+      <p class="hand accent">↓ {{ t.your_turn | downcase }}</p>
+      <h2 id="your-turn" class="h2">{{ t.your_turn }}</h2>
+      <p class="body measure">{{ t.your_turn_text }}</p>
+      <p class="actions">
+        <a class="btn btn-solid" href="{{ issue_base }}{{ t.suggest | append: ': ' | append: page.title | url_encode }}&body={{ issue_body }}">{{ t.suggest }}</a>
+        <a class="btn" href="{{ issue_base }}{{ t.built_it | append: ': ' | append: page.title | url_encode }}&body={{ issue_body }}">{{ t.built_it }}</a>
+      </p>
+      {%- if site.giscus.enabled %}
+      <script src="https://giscus.app/client.js"
+        data-repo="{{ site.repository }}" data-repo-id="{{ site.giscus.repo_id }}"
+        data-category="{{ site.giscus.category }}" data-category-id="{{ site.giscus.category_id }}"
+        data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0"
+        data-input-position="top" data-theme="dark_dimmed" data-lang="{{ lang }}" data-loading="lazy"
+        crossorigin="anonymous" async></script>
+      {%- endif %}
+    </aside>
+  </div>
+
+  {%- comment -%} Neighbours in the Lab (newer / older), skipping drafts and translations {%- endcomment -%}
+  {%- include lab-docs.html -%}
+  {%- assign newer = nil -%}{%- assign older = nil -%}
+  {%- for d in ideas -%}
+    {%- if d.path == src.path -%}
+      {%- assign i_newer = forloop.index0 | minus: 1 -%}
+      {%- assign i_older = forloop.index0 | plus: 1 -%}
+      {%- if i_newer >= 0 -%}{%- assign newer = ideas[i_newer] -%}{%- endif -%}
+      {%- assign older = ideas[i_older] -%}
+      {%- break -%}
+    {%- endif -%}
+  {%- endfor %}
+  {%- if newer or older %}
+  <nav class="wrap section" aria-labelledby="more">
+    <h2 id="more" class="h2 h2-sm">{{ t.more_ideas }}</h2>
+    <ul class="cards cards-2" role="list">
+      {%- if newer %}{% include lab-card.html doc=newer %}{% endif %}
+      {%- if older %}{% include lab-card.html doc=older %}{% endif %}
+    </ul>
+  </nav>
+  {%- endif %}
+</article>

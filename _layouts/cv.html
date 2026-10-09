@@ -1,0 +1,111 @@
+---
+layout: base
+nav: cv
+---
+{%- comment -%} All CV text lives in content/cv/index.md (both languages). {%- endcomment -%}
+{%- assign lang = page.lang | default: 'es' -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign cv = site.pages | where: "section", "cv" | first -%}
+{%- assign since = cv.since | default: 2018 -%}
+{%- assign years = site.time | date: '%Y' | minus: since -%}
+{%- include lab-docs.html -%}
+{%- assign cv_pdf = cv.cv_pdf[lang] -%}
+
+<section class="wrap hero" aria-labelledby="hello">
+  <div class="hero-text">
+    <p class="hand accent">{{ cv.hello[lang] }}</p>
+    <h1 id="hello" class="display">{{ cv.full_name | replace: ' ', '<br>' }}</h1>
+    <p class="lead">{{ cv.headline[lang] }}</p>
+    <p class="body dim">{{ cv.intro[lang] }}</p>
+    <div class="actions">
+      <a class="btn btn-solid" href="{{ t.root }}/lab/">{{ t.see_inventions }}</a>
+      {%- if cv_pdf %}
+      <a class="btn" href="/content/cv/{{ cv_pdf }}" download>{{ t.download_cv }} ↓</a>
+      {%- endif %}
+    </div>
+  </div>
+  <figure class="hero-photo">
+    <img src="/content/cv/{{ cv.photo }}" alt="{{ cv.photo_alt[lang] }}" width="1200" height="1200">
+    <figcaption class="hand accent">{{ t.photo_note }}</figcaption>
+  </figure>
+</section>
+
+<section class="wrap">
+  <dl class="facts">
+    <div><dt class="mono dim">{{ t.years_label }} {{ since }}</dt><dd>{{ years }} {{ t.years }}</dd></div>
+    <div><dt class="mono dim">{{ t.companies_label }}</dt><dd>{{ cv.jobs | size }}</dd></div>
+    <div><dt class="mono dim">{{ t.inventions_label }}</dt><dd>{{ ideas | size }}</dd></div>
+  </dl>
+</section>
+
+<section class="wrap section" aria-labelledby="path">
+  <div class="section-head path-head">
+    <h2 id="path" class="h2">{{ t.path_title }}</h2>
+    <div class="version-switch" role="group" aria-label="{{ t.version_label }}" data-cv-switch hidden>
+      <button type="button" class="hand" data-version="short" aria-pressed="true">({{ t.short_version }})</button>
+      <button type="button" class="hand" data-version="long" aria-pressed="false">({{ t.long_version }})</button>
+    </div>
+  </div>
+  <ol class="path" data-cv-path data-version="short">
+    {%- for job in cv.jobs %}
+    <li>
+      <span class="mono accent when">
+        <span class="v-short">{{ job.when[lang] | default: job.when }}</span>
+        <span class="v-long">{{ job.dates[lang] | default: job.dates | default: job.when[lang] | default: job.when }}</span>
+      </span>
+      <div>
+        <h3>{{ job.role[lang] | default: job.role }} · {{ job.company }}</h3>
+        <p class="dim v-short">{{ job.plain[lang] | default: job.plain }}</p>
+        {%- assign long = job.long[lang] | default: job.long.es %}
+        {%- if long %}
+        <div class="v-long">
+          <ul class="long-list">
+            {%- for b in long %}<li>{{ b }}</li>{% endfor %}
+          </ul>
+          {%- if job.tags %}
+          <ul class="tags" role="list">{% for tag in job.tags %}<li>#{{ tag }}</li>{% endfor %}</ul>
+          {%- endif %}
+        </div>
+        {%- endif %}
+      </div>
+    </li>
+    {%- endfor %}
+  </ol>
+
+  {%- if cv.education %}
+  <h2 class="h2 h2-sm">{{ t.education_title }}</h2>
+  <ol class="path">
+    {%- for e in cv.education %}
+    <li>
+      <span class="mono accent when">{{ e.when }}</span>
+      <div>
+        <h3>{{ e.title[lang] | default: e.title }}</h3>
+        <p class="dim">{{ e.plain[lang] | default: e.plain }}</p>
+      </div>
+    </li>
+    {%- endfor %}
+  </ol>
+  {%- endif %}
+</section>
+
+<section class="wrap section" aria-labelledby="latest">
+  <div class="section-head">
+    <h2 id="latest" class="h2">{{ t.latest_lab }}</h2>
+    <a class="mono" href="{{ t.root }}/lab/">{{ t.all_lab }}</a>
+  </div>
+  <ul class="cards" role="list">
+    {%- comment -%} Most recently active first: newest of the article date and its log entries {%- endcomment -%}
+    {%- assign recent = '' | split: '' -%}
+    {%- for doc in ideas -%}
+      {%- include doc-updated.html doc=doc -%}
+      {%- assign key = upd | append: '|' | append: forloop.index0 -%}
+      {%- assign recent = recent | push: key -%}
+    {%- endfor -%}
+    {%- assign recent = recent | sort | reverse -%}
+    {%- for key in recent limit: 3 %}
+      {%- assign i = key | split: '|' | last | plus: 0 -%}
+      {%- assign rdoc = ideas[i] -%}
+      {%- include lab-card.html doc=rdoc %}
+    {%- endfor %}
+  </ul>
+</section>
