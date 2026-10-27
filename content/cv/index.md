@@ -50,6 +50,7 @@ jobs:
         - Desarrollé comunicaciones LoRaWAN de largo alcance entre equipos en diferentes proyectos IoT.
         - Integré Zephyr RTOS en sistemas embebidos, logrando más estabilidad y escalabilidad en proyectos IoT.
         - Superviso la puesta en marcha del hardware, detectando y resolviendo problemas críticos en equipos electrónicos complejos.
+        - Depuro el firmware a bajo nivel con JTAG y SWD, usando herramientas de SEGGER y Lauterbach para sacar adelante los proyectos.
         - Gestiono las versiones de software y firmware con GitLab para un desarrollo controlado y colaborativo.
       en:
         - Lead the planning, implementation and technical management of telecom projects.
@@ -58,8 +59,9 @@ jobs:
         - Developed long-range LoRaWAN communication between devices across different IoT projects.
         - Integrated Zephyr RTOS into embedded systems, bringing more stability and scalability to IoT projects.
         - Oversee hardware bring-up, finding and fixing critical issues in complex electronic equipment.
+        - Debug firmware at low level over JTAG and SWD, using SEGGER and Lauterbach tools to get projects over the line.
         - Manage software and firmware versions with GitLab for controlled, collaborative development.
-    tags: [Zephyr, LoRaWAN, Python, STM32, Renesas, NXP, GitLab, Análisis de datos, Laboratorio electrónico]
+    tags: [Zephyr, LoRaWAN, Python, STM32, Renesas, NXP, JTAG/SWD, SEGGER, Lauterbach, GitLab, Análisis de datos, Laboratorio electrónico]
 
   - company: Inelcom
     when: 2020 — 2022
