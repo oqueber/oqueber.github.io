@@ -47,6 +47,7 @@ jobs:
         - Lidero la planificación, implementación y gestión técnica de proyectos de telecomunicaciones.
         - Diseño y desarrollo la lógica de equipos médicos, cumpliendo estrictos estándares regulatorios y mejorando la fiabilidad del hardware.
         - Implemento y optimizo protocolos de comunicación (I2C, SPI, UART, USB, WiFi, Bluetooth, NFC) en microcontroladores de 32 bits de NXP, Renesas y STM32.
+        - Desarrollé comunicaciones LoRaWAN de largo alcance entre equipos en diferentes proyectos IoT.
         - Integré Zephyr RTOS en sistemas embebidos, logrando más estabilidad y escalabilidad en proyectos IoT.
         - Superviso la puesta en marcha del hardware, detectando y resolviendo problemas críticos en equipos electrónicos complejos.
         - Gestiono las versiones de software y firmware con GitLab para un desarrollo controlado y colaborativo.
@@ -54,10 +55,11 @@ jobs:
         - Lead the planning, implementation and technical management of telecom projects.
         - Design and develop the logic of medical devices, meeting strict regulatory standards and improving hardware reliability.
         - Implement and optimise communication protocols (I2C, SPI, UART, USB, WiFi, Bluetooth, NFC) on 32-bit NXP, Renesas and STM32 microcontrollers.
+        - Developed long-range LoRaWAN communication between devices across different IoT projects.
         - Integrated Zephyr RTOS into embedded systems, bringing more stability and scalability to IoT projects.
         - Oversee hardware bring-up, finding and fixing critical issues in complex electronic equipment.
         - Manage software and firmware versions with GitLab for controlled, collaborative development.
-    tags: [Zephyr, Python, STM32, Renesas, NXP, GitLab, Análisis de datos, Laboratorio electrónico]
+    tags: [Zephyr, LoRaWAN, Python, STM32, Renesas, NXP, GitLab, Análisis de datos, Laboratorio electrónico]
 
   - company: Inelcom
     when: 2020 — 2022
