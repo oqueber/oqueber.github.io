@@ -20,6 +20,8 @@ es:
   short_version: versión corta
   long_version: versión larga
   education_title: Formación
+  skills_title: Lo que domino
+  featured_lab: Proyectos destacados del Lab
   latest_lab: Lo último del Lab
   all_lab: Ver todo el Lab →
   # Lab
@@ -100,6 +102,8 @@ en:
   short_version: short version
   long_version: long version
   education_title: Education
+  skills_title: What I work with
+  featured_lab: Featured Lab projects
   latest_lab: Latest from the Lab
   all_lab: See the whole Lab →
   lab_kicker: 02 · LAB

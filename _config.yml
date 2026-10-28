@@ -6,7 +6,7 @@
 #    content/_tools/<slug>        → tool wiki (one page per tool, linked from articles)
 
 title       : Oqueber Navarro
-description : Ingeniero electrónico e inventor en Madrid. Convierto ideas en aparatos que funcionan.
+description : Ingeniero de firmware embebido e inventor en Madrid (C, Zephyr, FreeRTOS, STM32, IoT). Convierto ideas en aparatos que funcionan.
 url         : "https://oqueber.com"
 baseurl     : ""
 lang        : es

@@ -19,6 +19,7 @@ nav: cv
     <p class="body dim">{{ cv.intro[lang] }}</p>
     <div class="actions">
       <a class="btn btn-solid" href="{{ t.root }}/lab/">{{ t.see_inventions }}</a>
+      <a class="btn" href="https://www.linkedin.com/in/{{ site.author.linkedin }}">LinkedIn ↗</a>
       {%- if cv_pdf %}
       <a class="btn" href="/content/cv/{{ cv_pdf }}" download>{{ t.download_cv }} ↓</a>
       {%- endif %}
@@ -37,6 +38,20 @@ nav: cv
     <div><dt class="mono dim">{{ t.inventions_label }}</dt><dd>{{ ideas | size }}</dd></div>
   </dl>
 </section>
+
+{%- if cv.skills %}
+<section class="wrap section" aria-labelledby="skills">
+  <h2 id="skills" class="h2">{{ t.skills_title }}</h2>
+  <div class="skills">
+    {%- for s in cv.skills %}
+    <div class="skill">
+      <h3 class="mono accent">{{ s.group[lang] | default: s.group }}</h3>
+      <ul class="tags" role="list">{% for item in s.items %}<li>{{ item[lang] | default: item }}</li>{% endfor %}</ul>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+{%- endif %}
 
 <section class="wrap section" aria-labelledby="path">
   <div class="section-head path-head">
@@ -77,7 +92,7 @@ nav: cv
   <ol class="path">
     {%- for e in cv.education %}
     <li>
-      <span class="mono accent when">{{ e.when }}</span>
+      <span class="mono accent when">{{ e.when[lang] | default: e.when }}</span>
       <div>
         <h3>{{ e.title[lang] | default: e.title }}</h3>
         <p class="dim">{{ e.plain[lang] | default: e.plain }}</p>
@@ -90,10 +105,18 @@ nav: cv
 
 <section class="wrap section" aria-labelledby="latest">
   <div class="section-head">
-    <h2 id="latest" class="h2">{{ t.latest_lab }}</h2>
+    <h2 id="latest" class="h2">{% if cv.featured.size > 0 %}{{ t.featured_lab }}{% else %}{{ t.latest_lab }}{% endif %}</h2>
     <a class="mono" href="{{ t.root }}/lab/">{{ t.all_lab }}</a>
   </div>
   <ul class="cards" role="list">
+    {%- if cv.featured.size > 0 %}
+    {%- for slug in cv.featured %}
+      {%- assign needle = '/' | append: slug | append: '/index.md' -%}
+      {%- for fdoc in ideas %}
+        {%- if fdoc.path contains needle %}{% include lab-card.html doc=fdoc %}{% endif %}
+      {%- endfor %}
+    {%- endfor %}
+    {%- else %}
     {%- comment -%} Most recently active first: newest of the article date and its log entries {%- endcomment -%}
     {%- assign recent = '' | split: '' -%}
     {%- for doc in ideas -%}
@@ -107,5 +130,27 @@ nav: cv
       {%- assign rdoc = ideas[i] -%}
       {%- include lab-card.html doc=rdoc %}
     {%- endfor %}
+    {%- endif %}
   </ul>
 </section>
+
+{%- comment -%} Structured data so search engines link this page to the LinkedIn / GitHub profiles {%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": {{ cv.full_name | jsonify }},
+  "jobTitle": {{ cv.jobs.first.role[lang] | jsonify }},
+  "worksFor": { "@type": "Organization", "name": {{ cv.jobs.first.company | jsonify }} },
+  "description": {{ cv.headline[lang] | jsonify }},
+  "url": "{{ site.url }}{{ page.url | remove: 'index.html' }}",
+  "image": "{{ site.url }}/content/cv/{{ cv.photo }}",
+  "address": { "@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Universidad Politécnica de Madrid" },
+  "sameAs": [
+    "https://www.linkedin.com/in/{{ site.author.linkedin }}",
+    "https://github.com/{{ site.author.github }}",
+    "https://www.thingiverse.com/{{ site.author.thingiverse }}"
+  ]
+}
+</script>
